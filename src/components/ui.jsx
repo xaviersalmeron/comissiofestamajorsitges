@@ -144,14 +144,9 @@ export function Boto({ variant = 'primari', className = '', children, ...props }
 }
 
 /** Capçalera d'una vista secundària. */
-export function CapcaleraVista({ eyebrow, titol, descripcio, children }) {
+export function CapcaleraVista({ titol, descripcio, children }) {
   return (
     <header className="anim-entrada mb-7">
-      {eyebrow && (
-        <p className="mb-1.5 text-xs font-bold tracking-[0.14em] text-fm-sorra-600 uppercase">
-          {eyebrow}
-        </p>
-      )}
       <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">{titol}</h2>
       {descripcio && <p className="mt-2.5 max-w-3xl text-sm text-slate-600 sm:text-base">{descripcio}</p>}
       {children}

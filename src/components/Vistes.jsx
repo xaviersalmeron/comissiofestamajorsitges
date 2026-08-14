@@ -33,7 +33,6 @@ export function VistaGenerals({ onFiltraElement }) {
   return (
     <div className="anim-entrada">
       <CapcaleraVista
-        eyebrow="Bloc 1"
         titol="Consignes per als integrants del seguici"
         descripcio="Balls populars, imatgeria festiva, acompanyaments musicals i banda. Aquestes consignes s’apliquen a totes les sortides de la Festa Major."
       />
@@ -92,7 +91,6 @@ export function VistaRecorreguts({ onVesASortida }) {
   return (
     <div className="anim-entrada">
       <CapcaleraVista
-        eyebrow="Bloc 3"
         titol="Recorreguts"
         descripcio="Plànol general de la Festa Major i itinerari escrit de cada sortida del seguici popular."
       />
@@ -160,7 +158,6 @@ export function VistaTramCalma({ onFiltraElement }) {
   return (
     <div className="anim-entrada">
       <CapcaleraVista
-        eyebrow="Annex II"
         titol="Tram en Calma"
         descripcio={TRAM_EN_CALMA.ubicacio}
       />

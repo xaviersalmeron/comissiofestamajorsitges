@@ -66,9 +66,6 @@ export default function App() {
         {vista === 'sortides' && (
           <>
             <div className="anim-entrada mb-6">
-              <p className="mb-1.5 text-xs font-bold tracking-[0.14em] text-fm-sorra-600 uppercase">
-                Bloc 2
-              </p>
               <h2 className="text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
                 Consignes detallades per a cada sortida
               </h2>
