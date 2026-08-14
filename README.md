@@ -19,6 +19,9 @@ npm run preview  # serveix el build
 Requereix Node 20 o superior. El `base` de Vite és relatiu (`./`), de manera que el `dist/` es pot
 servir des de qualsevol subcarpeta (GitHub Pages, una intranet, o obrint-lo directament).
 
+Per publicar-la —validació a GitHub Pages i allotjament al servidor propi— vegeu
+[`DESPLEGAMENT.md`](DESPLEGAMENT.md).
+
 ## Estructura
 
 ```

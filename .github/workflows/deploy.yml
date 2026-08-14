@@ -1,0 +1,46 @@
+name: Desplega a GitHub Pages
+
+on:
+  push:
+    branches: [claude/festa-major-consignes-app-376hsm]
+  workflow_dispatch:
+
+# El token només necessita llegir el codi i publicar a Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Un desplegament a la vegada; no cancel·lem el que ja està publicant
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.desplegament.outputs.page_url }}
+    steps:
+      - id: desplegament
+        uses: actions/deploy-pages@v4
