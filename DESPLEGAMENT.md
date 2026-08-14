@@ -9,12 +9,17 @@ servir des de qualsevol servidor web capaç de retornar fitxers.
 El repositori porta un workflow (`.github/workflows/deploy.yml`) que compila l'app i la publica a
 GitHub Pages a cada `push` sobre la branca de desenvolupament.
 
-El workflow activa Pages ell mateix la primera vegada (`enablement: true`), de manera que no cal
-tocar cap opció. Si l'activació automàtica fallés per permisos del compte, es pot fer a mà a
-*Settings → Pages → Build and deployment* triant `GitHub Actions` com a **Source**.
+### Pas manual, una sola vegada
 
-Cada push desplega sol; també es pot llançar a mà des de
-*Actions → Desplega a GitHub Pages → Run workflow*.
+Cal activar Pages abans que el workflow pugui desplegar: a
+**Settings → Pages → Build and deployment**, triar `GitHub Actions` com a **Source**.
+
+No es pot automatitzar: el `GITHUB_TOKEN` del workflow no té permís per crear el lloc de Pages
+(`Resource not accessible by integration`), i el paràmetre `enablement` de `configure-pages` hi
+falla per aquest motiu.
+
+Un cop activat, cada push desplega sol. La primera vegada cal rellançar el workflow des de
+*Actions → Desplega a GitHub Pages → Run workflow*, o fer qualsevol push nou.
 
 La URL resultant és:
 
