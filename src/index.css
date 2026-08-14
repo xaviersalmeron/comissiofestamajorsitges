@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+
+/*
+  Paleta extreta directament del logotip oficial "Sitges Festa Major"
+  (mostrejada del PNG del document): blau #0E4194, vermell #CD1123, sorra #C99E67.
+*/
+@theme {
+  --color-fm-blau-50: #eef4fd;
+  --color-fm-blau-100: #d8e5fa;
+  --color-fm-blau-200: #b3cbf4;
+  --color-fm-blau-300: #7fa7ea;
+  --color-fm-blau-400: #4a7cd8;
+  --color-fm-blau-500: #2559b8;
+  --color-fm-blau-600: #0e4194;
+  --color-fm-blau-700: #0c357a;
+  --color-fm-blau-800: #0a2b62;
+  --color-fm-blau-900: #071e45;
+
+  --color-fm-vermell-50: #fef2f3;
+  --color-fm-vermell-100: #fde0e2;
+  --color-fm-vermell-200: #fbc4c9;
+  --color-fm-vermell-300: #f795a0;
+  --color-fm-vermell-400: #ef5c6e;
+  --color-fm-vermell-500: #e02a41;
+  --color-fm-vermell-600: #cd1123;
+  --color-fm-vermell-700: #ac0d1d;
+  --color-fm-vermell-800: #8b0b18;
+  --color-fm-vermell-900: #6b0812;
+
+  --color-fm-sorra-50: #faf6f0;
+  --color-fm-sorra-100: #f3ebdd;
+  --color-fm-sorra-200: #e7d5bb;
+  --color-fm-sorra-300: #d9bd92;
+  --color-fm-sorra-400: #c99e67;
+  --color-fm-sorra-500: #b9854a;
+  --color-fm-sorra-600: #9c6d3b;
+  --color-fm-sorra-700: #7c5530;
+  --color-fm-sorra-800: #5d3f26;
+  --color-fm-sorra-900: #402c1c;
+
+  --font-sans:
+    'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased;
+    /* Safe areas per a mòbils amb notch: la barra inferior no s'ha de tapar */
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-fm-blau-600;
+  }
+
+  /* Amaguem la creu nativa de input[type=search]: ja en pintem una de pròpia */
+  input[type='search']::-webkit-search-cancel-button,
+  input[type='search']::-webkit-search-decoration {
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+
+@layer utilities {
+  /* Amaga la barra de scroll horitzontal dels carrusels de filtres */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .anim-entrada {
+    animation: fm-entrada 0.32s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .anim-puja {
+    animation: fm-puja 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@keyframes fm-entrada {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes fm-puja {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .anim-entrada,
+  .anim-puja {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
