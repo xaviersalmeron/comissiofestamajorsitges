@@ -1141,31 +1141,34 @@ export const SORTIDES = [
     horaText: 'Nit',
     resum: 'Espera i entrada del Sant al Baluard, amb foc fred a l’inici del Castell de Foc.',
     // No hi ha ordre de sortida: el document només en dona el plànol de
-    // disposició al Baluard, i és d'allà que surt aquesta llista.
+    // disposició al Baluard, i és d'allà que surten els elements. Es llisten
+    // seguint l'ordre de la Processó de Sant Bartomeu, de la qual venen; els
+    // Castells, que no hi surten, van darrere la Moixiganga com a la Sortida
+    // d'Ofici.
     disposicio: true,
     ordre: [
-      'banda',
-      'cabecuts',
       'gegants-vila',
       'gegants-americanos',
       'gegants-moros',
-      'gitanes-abps',
-      'panderetes',
-      'bastons-jove',
-      'cintes',
-      'castellers',
-      'moixiganga',
-      'gitanes-vila',
-      'pastorets',
-      'cercolets',
-      'drac',
-      'aliga',
+      'cabecuts',
       'diables-vella',
+      'drac',
       'diables-jove',
+      'aliga',
       'diables-abps',
+      'bastons-jove',
+      'gitanes-vila',
+      'cercolets',
+      'pastorets',
+      'panderetes',
+      'cintes',
+      'gitanes-abps',
+      'moixiganga',
+      'castellers',
+      'banda',
     ],
     ordreNota:
-      'El plànol situa un únic bloc de Bastons («1 colla de bastons»), tot i que el text parla de «les colles del Ball de Bastons» en plural.',
+      'Els elements segueixen l’ordre de la Processó de Sant Bartomeu. El plànol situa un únic bloc de Bastons («1 colla de bastons»), tot i que el text parla de «les colles del Ball de Bastons» en plural.',
     indicacions: [
       'Els balls es prepararan per esperar el Sant en la disposició del plànol. Les colles del Ball de Bastons han de finalitzar el seu ball quan arribi el seu cap davant de la porta de la Parròquia. El Ball de Cercolets es posicionarà entre el Ball de Pastorets i la Geganta Mora.',
       'La Banda entrarà a plaça darrere les autoritats i tocarà durant l’entrada. Hi ha d’haver lloc per a tots i cal evitar les baralles, respectant-nos i ajudant-nos.',
