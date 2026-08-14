@@ -3,6 +3,7 @@ import { CONSIGNES_GENERALS } from './consignesGenerals.js'
 import { DISPOSITIU_SANITARI, dispositiuDeSortida, TELEFONS_EMERGENCIA } from './dispositiuSanitari.js'
 import { TRAM_EN_CALMA } from './tramEnCalma.js'
 import { ELEMENTS, ELEMENTS_PER_ID, CATEGORIES, nomElement, nomCurtElement } from './elements.js'
+import { SEGURETAT_PER_ACTE, COSSOS, comptaSeguretat, cossosAmbContingut } from './seguretat.js'
 
 export {
   SORTIDES,
@@ -17,12 +18,19 @@ export {
   CATEGORIES,
   nomElement,
   nomCurtElement,
+  SEGURETAT_PER_ACTE,
+  COSSOS,
+  comptaSeguretat,
+  cossosAmbContingut,
 }
+
+/** Quadre de seguretat propi d'un acte, si en té al document. */
+export const seguretatDeSortida = (id) => SEGURETAT_PER_ACTE[id] ?? null
 
 export const META = {
   titol: 'Consignes de la Festa Major',
   sant: 'Sant Bartomeu 2026',
-  versio: 'Versió 2.1 · 02/08/2026',
+  versio: 'Versió 3.0 · 14/08/2026',
   entitat: 'Comissió Municipal de Sant Bartomeu i Santa Tecla',
 }
 
@@ -87,6 +95,10 @@ const textDeSortida = (s) =>
       ...g.punts.flatMap((p) => [p.lloc, p.pendent ?? '', ...(p.persones ?? [])]),
     ]),
     s.voluntariat?.nota ?? '',
+    ...COSSOS.flatMap((c) => [
+      SEGURETAT_PER_ACTE[s.id]?.[c.id]?.length ? c.nom : '',
+      ...(SEGURETAT_PER_ACTE[s.id]?.[c.id] ?? []),
+    ]),
   ]
     .filter(Boolean)
     .join(' · ')
@@ -127,15 +139,25 @@ export const TOTAL_PUNTS_AIGUA = PUNTS_AIGUA_PER_SORTIDA.reduce(
   0,
 )
 
-/** Tots els punts de seguretat i emergència (Annex I), lligats a la seva sortida. */
+/**
+ * Tots els punts de seguretat i emergència, lligats a la seva sortida.
+ * Prioritza el quadre propi de l'acte (Policia, Seguretat, Creu Roja i
+ * Bombers) i, per als actes que no en tenen, cau al resum de l'Annex I.
+ */
 export const SEGURETAT_PER_SORTIDA = SORTIDES.map((s) => ({
   sortidaId: s.id,
   titol: s.titol,
   data: s.data,
   horaText: s.horaText,
   dia: s.dia,
+  bloc: SEGURETAT_PER_ACTE[s.id] ?? null,
   dispositiu: dispositiuDeSortida(s.id),
-})).filter((s) => s.dispositiu)
+})).filter((s) => s.bloc || s.dispositiu)
+
+/** Actes on hi ha desplegament de Bombers voluntaris. */
+export const SORTIDES_AMB_BOMBERS = SORTIDES.filter(
+  (s) => (SEGURETAT_PER_ACTE[s.id]?.bombers?.length ?? 0) > 0,
+)
 
 /** Punts habilitats per a persones usuàries de cadira de rodes. */
 export const PUNTS_ACCESSIBLES = SORTIDES.filter((s) => (s.accessibilitat ?? []).length > 0).map(

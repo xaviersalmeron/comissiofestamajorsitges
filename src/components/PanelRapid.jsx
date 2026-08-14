@@ -5,8 +5,25 @@ import {
   TELEFONS_EMERGENCIA,
   TOTAL_PUNTS_AIGUA,
   PUNTS_ACCESSIBLES,
+  cossosAmbContingut,
 } from '../data/index.js'
+
 import { IcAigua, IcAvis, IcCadiraRodes, IcCreu, IcEmergencia, IcFletxa, IcTelefon } from './Icones.jsx'
+
+/** Tons de cada cos, alineats amb els de la targeta de sortida. */
+const TEXT_COS = {
+  blau: 'text-fm-blau-800',
+  sorra: 'text-fm-sorra-800',
+  vermell: 'text-fm-vermell-800',
+  taronja: 'text-orange-800',
+}
+const FONS_COS = {
+  blau: 'bg-fm-blau-600',
+  sorra: 'bg-fm-sorra-500',
+  vermell: 'bg-fm-vermell-600',
+  taronja: 'bg-orange-500',
+}
+
 
 /**
  * Accés directe (funcionalitat 2): calaix lateral amb tots els punts de
@@ -51,7 +68,7 @@ export default function PanelRapid({ mode, onTanca, onVesASortida }) {
             </h2>
             <p className="text-xs text-white/80">
               {esEmergencia
-                ? `Dispositiu sanitari de ${SEGURETAT_PER_SORTIDA.length} actes`
+                ? `Policia, Seguretat, Creu Roja i Bombers · ${SEGURETAT_PER_SORTIDA.length} actes`
                 : `${TOTAL_PUNTS_AIGUA} punts en ${PUNTS_AIGUA_PER_SORTIDA.length} sortides`}
             </p>
           </div>
@@ -128,53 +145,79 @@ function PanellEmergencies({ onVesASortida, onTanca }) {
         <p className="text-xs text-amber-800/90">{TELEFONS_EMERGENCIA.restriccio}</p>
       </section>
 
-      {/* Dispositiu per acte */}
+      {/* Desplegament de seguretat per acte */}
       <section className="space-y-3">
         <h3 className="px-1 text-xs font-bold tracking-wider text-slate-400 uppercase">
-          Dispositiu sanitari per acte · Annex I
+          Desplegament per acte
         </h3>
-        {SEGURETAT_PER_SORTIDA.map((s) => (
-          <article key={s.sortidaId} className="rounded-2xl border border-slate-200 bg-white p-4">
-            <button
-              type="button"
-              onClick={() => {
-                onTanca()
-                onVesASortida(s.sortidaId)
-              }}
-              className="group flex w-full items-start gap-2 text-left"
-            >
-              <span className="min-w-0 flex-1">
-                <span className="block text-sm font-bold text-slate-800 group-hover:text-fm-blau-700">
-                  {s.titol}
-                </span>
-                <span className="block text-xs text-slate-500">
-                  {s.data} · {s.dispositiu.franja}
-                </span>
-              </span>
-              <IcFletxa className="mt-0.5 h-4 w-4 shrink-0 text-slate-300 transition-transform group-hover:translate-x-0.5 group-hover:text-fm-blau-600" />
-            </button>
-
-            {s.dispositiu.heretat && (
-              <p className="mt-2 rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs text-slate-500">
-                Cobert pel dispositiu de «{s.dispositiu.heretat}».
-              </p>
-            )}
-
-            <ul className="mt-3 space-y-1.5">
-              {s.dispositiu.recursos.map((r, i) => (
-                <li key={i} className="flex items-start gap-2 text-xs text-slate-600">
-                  <span className="mt-px inline-flex shrink-0 rounded bg-fm-vermell-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
-                    {r.tipus}
+        {SEGURETAT_PER_SORTIDA.map((s) => {
+          const cossos = cossosAmbContingut(s.bloc)
+          return (
+            <article key={s.sortidaId} className="rounded-2xl border border-slate-200 bg-white p-4">
+              <button
+                type="button"
+                onClick={() => {
+                  onTanca()
+                  onVesASortida(s.sortidaId)
+                }}
+                className="group flex w-full items-start gap-2 text-left"
+              >
+                <span className="min-w-0 flex-1">
+                  <span className="block text-sm font-bold text-slate-800 group-hover:text-fm-blau-700">
+                    {s.titol}
                   </span>
-                  {r.text}
-                </li>
-              ))}
-            </ul>
-            <p className="mt-2.5 border-t border-slate-100 pt-2 text-xs font-semibold text-slate-700">
-              Total: {s.dispositiu.total}
-            </p>
-          </article>
-        ))}
+                  <span className="block text-xs text-slate-500">
+                    {s.data} · {s.dispositiu?.franja ?? s.horaText}
+                  </span>
+                </span>
+                <IcFletxa className="mt-0.5 h-4 w-4 shrink-0 text-slate-300 transition-transform group-hover:translate-x-0.5 group-hover:text-fm-blau-600" />
+              </button>
+
+              {cossos.length > 0 ? (
+                <div className="mt-3 space-y-2.5">
+                  {cossos.map((cos) => (
+                    <div key={cos.id}>
+                      <p className={`mb-1 flex items-center gap-1.5 text-xs font-bold ${TEXT_COS[cos.to]}`}>
+                        <span className={`h-3 w-1 rounded-full ${FONS_COS[cos.to]}`} />
+                        {cos.nom}
+                      </p>
+                      <ul className="space-y-1">
+                        {s.bloc[cos.id].map((t, i) => (
+                          <li key={i} className="pl-3.5 text-xs text-slate-600">
+                            · {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                s.dispositiu && (
+                  <>
+                    {s.dispositiu.heretat && (
+                      <p className="mt-2 rounded-lg bg-slate-50 px-2.5 py-1.5 text-xs text-slate-500">
+                        Cobert pel dispositiu de «{s.dispositiu.heretat}».
+                      </p>
+                    )}
+                    <ul className="mt-3 space-y-1.5">
+                      {s.dispositiu.recursos.map((r, i) => (
+                        <li key={i} className="flex items-start gap-2 text-xs text-slate-600">
+                          <span className="mt-px inline-flex shrink-0 rounded bg-fm-vermell-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                            {r.tipus}
+                          </span>
+                          {r.text}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-2.5 border-t border-slate-100 pt-2 text-xs font-semibold text-slate-700">
+                      Total: {s.dispositiu.total}
+                    </p>
+                  </>
+                )
+              )}
+            </article>
+          )
+        })}
       </section>
 
       {/* Accessibilitat */}

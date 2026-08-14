@@ -157,6 +157,37 @@ export const IcGegant = (p) => (
   </Svg>
 )
 
+export const IcPolicia = (p) => (
+  <Svg {...p}>
+    <path d="M12 2.9 5.2 5.4v5.5c0 4 2.7 7.6 6.8 8.6 4.1-1 6.8-4.6 6.8-8.6V5.4L12 2.9Z" />
+    <path d="m9.6 11.6 1.7 1.7 3.3-3.4" />
+  </Svg>
+)
+
+export const IcBombers = (p) => (
+  <Svg {...p}>
+    <path d="M3.2 16.4h13.4v-4.2H3.2v4.2Z" />
+    <path d="M16.6 13.4h2.1l2.1 2.5v1h-4.2" />
+    <circle cx="7" cy="18.4" r="1.9" />
+    <circle cx="17.4" cy="18.4" r="1.9" />
+    <path d="M6.1 12.2V9.4a1.5 1.5 0 0 1 1.5-1.5h1.7" />
+  </Svg>
+)
+
+export const IcCreuRoja = (p) => (
+  <Svg {...p}>
+    <path d="M12 3.4v17.2M3.4 12h17.2" />
+  </Svg>
+)
+
+/** Icona per a cada cos del desplegament de seguretat. */
+export const ICONA_COS = {
+  policia: IcPolicia,
+  seguretat: IcEmergencia,
+  creuRoja: IcCreuRoja,
+  bombers: IcBombers,
+}
+
 /** Icona representativa per a cada categoria d'element festiu. */
 export const ICONA_CATEGORIA = {
   imatgeria: IcGegant,

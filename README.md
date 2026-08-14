@@ -1,7 +1,7 @@
 # Consignes · Festa Major de Sant Bartomeu 2026
 
 Aplicació web de consulta ràpida de les **Consignes de la Festa Major de Sant Bartomeu de Sitges
-2026** (versió 2.1, 02/08/2026), pensada per als organitzadors i participants de la Festa: membres
+2026** (versió 3.0, 14/08/2026), pensada per als organitzadors i participants de la Festa: membres
 de la Comissió, caps de colla, balladors, músics i voluntariat.
 
 Tot el contingut és una transcripció del document oficial de consignes. **En cas de dubte o
@@ -30,6 +30,7 @@ src/
     elements.js            catàleg d'elements festius (base del filtre)
     consignesGenerals.js   bloc 1 de l'índex
     sortides.js            bloc 2: les 12 sortides del seguici
+    seguretat.js           quadre de seguretat de cada acte (4 cossos)
     dispositiuSanitari.js  annex I
     tramEnCalma.js         annex II
     index.js               selectors derivats: cerca, filtres i agregats
@@ -65,21 +66,28 @@ mateix codi de color, de manera que es puguin localitzar d'una ullada:
 | Subapartat | Color | Contingut |
 | --- | --- | --- |
 | Punts d'aigua | cel | On es reparteix aigua durant l'acte |
-| Punts de seguretat i d'emergència | vermell | Ambulàncies i socorristes desplegats |
+| Punts de seguretat i d'emergència | vermell | Policia Local, Seguretat, Creu Roja i Bombers voluntaris |
 | Presència de la Comissió de Festa Major | blau | Punt, assignació i persones |
 | Presència del voluntariat | sorra | Grup, punt i persones |
 
-### D'on surten els punts de seguretat i d'emergència
+### Els punts de seguretat i d'emergència
 
-Al cos del document, els subapartats «Punts de seguretat i d'emergència» hi consten com a
-encapçalament sense contingut desplegat: el desplegament real (ambulàncies SVI/SVB/SVA i socorristes,
-acte per acte) és a l'**Annex I · Dispositiu sanitari**. L'app els vincula automàticament amb
-`dispositiuDeSortida()`, de manera que cada sortida mostri el dispositiu que li correspon i, quan
-un acte queda cobert pel dispositiu d'un altre encadenat (Entrada del Sant i Ballada Final, dins la
-franja de la Processó de Sant Bartomeu), ho indiqui explícitament.
+Cada sortida porta al document el seu propi quadre de seguretat, amb el desplegament dels quatre
+cossos que hi intervenen. L'app els mostra en aquest ordre, cadascun amb el seu color i recompte:
 
-Els actes sense dispositiu propi al document — la Presentació del cabeçut «El Patufet» — mostren
-l'estat buit corresponent amb la indicació de trucar al 112.
+1. **Policia Local** — pilotatge del recorregut, talls de trànsit i punts de referència.
+2. **Seguretat** — auxiliars que tanquen accessos de vianants.
+3. **Creu Roja** — ambulàncies (SVI/SVB/SVA) i socorristes.
+4. **Bombers voluntaris** — vehicles d'aigua, presents en 5 dels actes.
+
+Vuit actes tenen quadre propi. Per als tres que no en tenen (l'Actuació castellera de la vigília,
+l'Entrada del Sant i l'Exhibició castellera), el subapartat cau al resum de l'**Annex I · Dispositiu
+sanitari** i ho indica explícitament, de manera que mai no quedi mut; l'Entrada del Sant queda
+coberta pel dispositiu de la Processó de Sant Bartomeu. L'únic acte sense cap cobertura documentada
+—la Presentació del cabeçut «El Patufet»— mostra l'estat buit amb la indicació de trucar al 112.
+
+L'Annex I es manté com a vista pròpia perquè hi consten els totals per acte i el protocol de trucada
+a la Creu Roja.
 
 ## Funcionalitats
 
@@ -89,8 +97,9 @@ l'estat buit corresponent amb la indicació de trucar al 112.
   filtre és acumulatiu (OR). En filtrar per un element, aquest queda ressaltat dins l'ordre de
   sortida de cada acte.
 - **Accés directe a seguretat/emergències i punts d'aigua.** Dos botons permanents a la capçalera
-  obren un calaix lateral amb els telèfons d'emergència (com a enllaços `tel:`), el dispositiu
-  sanitari de tots els actes i els punts habilitats per a persones usuàries de cadira de rodes, o bé
+  obren un calaix lateral amb els telèfons d'emergència (com a enllaços `tel:`), el desplegament de
+  Policia, Seguretat, Creu Roja i Bombers de tots els actes i els punts habilitats per a persones
+  usuàries de cadira de rodes, o bé
   els 34 punts d'aigua de la Festa agrupats per sortida. Des del calaix es pot saltar a les
   consignes completes de qualsevol acte.
 
@@ -103,14 +112,9 @@ en mòbil, pestanyes en escriptori), amb transicions suaus i suport per a `prefe
 
 ## Notes sobre la font
 
-El document original conté algunes incoherències que s'han transcrit tal com hi consten, sense
-esmenar-les:
+La versió 3.0 va corregir les incoherències de recompte que hi havia a la 2.1 (Processó Cívica de la
+Bandera i Baixada de les Escales) i l'ordre de sortida de la Sortida d'Ofici, que començava amb «Q
+Americanos». Les xifres i els noms de l'app segueixen ara el document sense cap esmena.
 
-- A la Processó Cívica de la Bandera, la plaça de l'Ajuntament diu «3 persones» i n'enumera 4; el
-  Baluard Miquel Utrillo diu «6 persones» i n'enumera 5.
-- A la Baixada de les Escales, la Fragata diu «5 persones fixes» i n'enumera 4.
-- A la Processó de Sant Bartomeu, el Cap de la Vila diu «3 persones» comptant-hi el President.
-- L'ordre de sortida de la Sortida d'Ofici comença amb «Q Americanos», que s'ha interpretat com als
-  Gegants de la Vila i els Gegants Americanos.
-- Alguns grups de voluntariat consten com a pendents d'assignar (`XXX` al document); a l'app surten
-  marcats com a «Pendent d'assignar».
+Queden tres grups de voluntariat pendents d'assignar al document (dos a la Processó Cívica de la
+Bandera i l'esmorzar de la Matinal); a l'app hi surten marcats com a «Pendent d'assignar».

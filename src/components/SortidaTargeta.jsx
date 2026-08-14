@@ -2,6 +2,7 @@ import { useId } from 'react'
 import Planol from './Planol.jsx'
 import { BlocSubapartat, Etiqueta, XipPersona } from './ui.jsx'
 import {
+  ICONA_COS,
   IcAigua,
   IcCadiraRodes,
   IcCalma,
@@ -15,7 +16,10 @@ import {
   IcVoluntariat,
 } from './Icones.jsx'
 import { dispositiuDeSortida } from '../data/dispositiuSanitari.js'
+import { comptaSeguretat, cossosAmbContingut, SEGURETAT_PER_ACTE } from '../data/seguretat.js'
 import { ELEMENTS_PER_ID } from '../data/elements.js'
+
+const seguretatDeSortida = (id) => SEGURETAT_PER_ACTE[id] ?? null
 
 const TONS_TIPUS = {
   Processó: 'vermell',
@@ -101,8 +105,51 @@ function BlocAigua({ punts }) {
   )
 }
 
-/** 2. Punts de seguretat i d'emergència (desplegament de l'Annex I) */
+/** Tons de cada cos del desplegament de seguretat. */
+const TONS_COS = {
+  blau: { cap: 'text-fm-blau-800', punt: 'bg-fm-blau-600', vora: 'ring-fm-blau-100' },
+  sorra: { cap: 'text-fm-sorra-800', punt: 'bg-fm-sorra-500', vora: 'ring-fm-sorra-200' },
+  vermell: { cap: 'text-fm-vermell-800', punt: 'bg-fm-vermell-600', vora: 'ring-fm-vermell-100' },
+  taronja: { cap: 'text-orange-800', punt: 'bg-orange-500', vora: 'ring-orange-200' },
+}
+
+/** Un cos del desplegament: Policia Local, Seguretat, Creu Roja o Bombers. */
+export function GrupCos({ cos, linies }) {
+  const t = TONS_COS[cos.to]
+  const Icona = ICONA_COS[cos.id]
+  return (
+    <div className={`rounded-xl bg-white p-3.5 ring-1 ring-inset ${t.vora}`}>
+      <p className={`mb-2.5 flex items-center gap-2 text-sm font-bold ${t.cap}`}>
+        <span className={`grid h-6 w-6 shrink-0 place-items-center rounded-lg text-white ${t.punt}`}>
+          <Icona className="h-3.5 w-3.5" />
+        </span>
+        {cos.nom}
+        {cos.detall && <span className="font-normal text-slate-400">· {cos.detall}</span>}
+        <span className="ml-auto rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold text-slate-500 tabular-nums">
+          {linies.length}
+        </span>
+      </p>
+      <ul className="space-y-2">
+        {linies.map((text, i) => (
+          <li key={i} className="flex gap-2.5 text-sm leading-relaxed text-slate-700">
+            <span className={`mt-2 h-1.5 w-1.5 shrink-0 rounded-full ${t.punt}`} />
+            {text}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+/**
+ * 2. Punts de seguretat i d'emergència.
+ * Fa servir el quadre propi de l'acte (Policia Local, Seguretat, Creu Roja i
+ * Bombers voluntaris) i, si el document no en dona cap, cau al resum de
+ * l'Annex I perquè el subapartat mai no quedi mut.
+ */
 function BlocSeguretat({ sortidaId }) {
+  const bloc = seguretatDeSortida(sortidaId)
+  const cossos = cossosAmbContingut(bloc)
   const d = dispositiuDeSortida(sortidaId)
 
   return (
@@ -110,39 +157,47 @@ function BlocSeguretat({ sortidaId }) {
       titol="Punts de seguretat i d’emergència"
       icona={IcEmergencia}
       to="vermell"
-      recompte={d ? d.total : null}
+      recompte={cossos.length ? `${comptaSeguretat(bloc)} efectius` : d ? d.total : null}
       buit={
-        d
+        cossos.length || d
           ? null
-          : 'El document no preveu dispositiu sanitari propi per a aquest acte. En cas d’emergència, truqueu al 112.'
+          : 'El document no preveu desplegament propi per a aquest acte. En cas d’emergència, truqueu al 112.'
       }
     >
-      {d && (
+      {cossos.length > 0 ? (
         <div className="space-y-3">
-          <p className="text-xs font-medium text-fm-vermell-700">
-            {d.heretat
-              ? `Cobert pel dispositiu de «${d.heretat}» · ${d.franja}`
-              : `${d.dia} · ${d.franja}`}
-          </p>
-          <ul className="space-y-2">
-            {d.recursos.map((r, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-2.5 rounded-xl bg-white px-3 py-2.5 ring-1 ring-fm-vermell-100 ring-inset"
-              >
-                <span className="mt-px inline-flex shrink-0 rounded-md bg-fm-vermell-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
-                  {r.tipus}
-                </span>
-                <span className="text-sm text-slate-700">{r.text}</span>
-              </li>
-            ))}
-          </ul>
-          {(d.recorregut || d.lloc) && (
-            <p className="text-xs text-slate-500">
-              <span className="font-semibold">Àmbit:</span> {d.recorregut ?? d.lloc}
-            </p>
-          )}
+          {cossos.map((cos) => (
+            <GrupCos key={cos.id} cos={cos} linies={bloc[cos.id]} />
+          ))}
         </div>
+      ) : (
+        d && (
+          <div className="space-y-3">
+            <p className="text-xs font-medium text-fm-vermell-700">
+              {d.heretat
+                ? `Cobert pel dispositiu de «${d.heretat}» · ${d.franja}`
+                : `Annex I · ${d.dia} · ${d.franja}`}
+            </p>
+            <ul className="space-y-2">
+              {d.recursos.map((r, i) => (
+                <li
+                  key={i}
+                  className="flex items-start gap-2.5 rounded-xl bg-white px-3 py-2.5 ring-1 ring-fm-vermell-100 ring-inset"
+                >
+                  <span className="mt-px inline-flex shrink-0 rounded-md bg-fm-vermell-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
+                    {r.tipus}
+                  </span>
+                  <span className="text-sm text-slate-700">{r.text}</span>
+                </li>
+              ))}
+            </ul>
+            {(d.recorregut || d.lloc) && (
+              <p className="text-xs text-slate-500">
+                <span className="font-semibold">Àmbit:</span> {d.recorregut ?? d.lloc}
+              </p>
+            )}
+          </div>
+        )
       )}
     </BlocSubapartat>
   )
@@ -249,6 +304,7 @@ function BlocVoluntariat({ voluntariat }) {
                       {p.pendent ?? 'Pendent d’assignar'}
                     </p>
                   )}
+                  {p.nota && <p className="mt-1 text-xs text-slate-500 italic">{p.nota}</p>}
                 </li>
               ))}
             </ul>
@@ -274,7 +330,12 @@ function Comptadors({ sortida }) {
       etiqueta: 'aigua',
       to: 'text-sky-600',
     },
-    { icona: IcEmergencia, valor: d ? '✓' : '—', etiqueta: 'sanitari', to: 'text-fm-vermell-600' },
+    {
+      icona: IcEmergencia,
+      valor: comptaSeguretat(seguretatDeSortida(sortida.id)) || (d ? '✓' : '—'),
+      etiqueta: 'seguretat',
+      to: 'text-fm-vermell-600',
+    },
     {
       icona: IcComissio,
       valor: sortida.comissio?.length ?? 0,

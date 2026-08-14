@@ -1,10 +1,14 @@
 /**
  * ANNEX I — DISPOSITIU SANITARI
  *
- * Aquest annex és la font dels "Punts de seguretat i d'emergència" de cada
- * sortida: al cos del document els subapartats hi consten com a encapçalament,
- * i el desplegament concret (ambulàncies i socorristes) està recollit aquí.
- * Cada entrada està indexada per l'identificador de la sortida corresponent.
+ * Resum del desplegament de la Creu Roja acte per acte, amb els totals i el
+ * protocol de trucada. És una vista pròpia de l'annex, no la font dels
+ * "Punts de seguretat i d'emergència" de cada sortida: aquests surten del
+ * quadre de seguretat propi de cada acte (Policia Local, Seguretat, Creu Roja
+ * i Bombers voluntaris), a `seguretat.js`.
+ *
+ * Cada entrada està indexada per l'identificador de la sortida corresponent i
+ * serveix de reforç per als actes que no tenen quadre propi al document.
  */
 
 export const TELEFONS_EMERGENCIA = {
@@ -59,7 +63,7 @@ export const DISPOSITIU_SANITARI = {
       },
       {
         tipus: 'SVB',
-        text: '1 Ambulància Classe Assistencial B (Bàsica), carrer Àngel Vidal / Cap de la Vila; un cop passin tots els balls va a l’Hospital Sant Joan Baptista.',
+        text: '1 Ambulància Classe Assistencial B (Bàsica) al carrer Sant Bartomeu; un cop passin tots els balls va a l’Hospital Sant Joan Baptista.',
       },
       {
         tipus: 'Socorristes',
@@ -92,11 +96,11 @@ export const DISPOSITIU_SANITARI = {
     recursos: [
       {
         tipus: 'SVI',
-        text: '1 Ambulància Classe Assistencial C (SVI) al carrer Sant Bartomeu / Jesús. Després marxa cap al Passatge de la Vall / Port de n’Alegre.',
+        text: '1 Ambulància Classe Assistencial C (SVI) al carrer Pompeu Fabra / Isabel Julià. Després marxa cap a la plaça de l’Ajuntament.',
       },
       {
         tipus: 'SVB',
-        text: '1 Ambulància Classe Assistencial B (Bàsica) al carrer Pompeu Fabra / Isabel Julià. Després marxa cap al Passatge de la Vall / Port de n’Alegre.',
+        text: '1 Ambulància Classe Assistencial B (Bàsica) al carrer Sant Bartomeu. Després marxa cap al Passatge de la Vall / Port de n’Alegre.',
       },
       {
         tipus: 'Socorristes',

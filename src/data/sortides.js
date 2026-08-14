@@ -478,7 +478,7 @@ export const SORTIDES = [
             descripcio: 'President + 1 parella fixa vetllant pel transcurs de la Processó',
             persones: ['Xavier Salmerón (President)', 'Vinyet Casolivé', 'Marta Juez'],
             enAcabar:
-              'El President portarà la bandera fins al Baluard, i la parella l’acompanyarà fins al carrer Sant Honorat (Pont dels Ocells). Un cop fet el relleu, aniran al Parc de Can Bóta.',
+              'El President portarà la bandera fins al Baluard, i la parella l’acompanyarà fins al carrer Sant Honorat (Pont dels Ocells). Un cop fet el relleu, aniran a Can Falç.',
           },
           {
             descripcio: '1 persona obrint cercavila amb els Gegants',
@@ -529,7 +529,7 @@ export const SORTIDES = [
         lloc: 'Plaça de l’Ajuntament',
         assignacions: [
           {
-            descripcio: '3 persones vetllant pel transcurs de la Processó',
+            descripcio: '4 persones vetllant pel transcurs de la Processó',
             persones: ['Marta Artigas', 'Gabri González', 'Irene Martínez', 'Maria Junyent'],
             enAcabar: 'Acompanyaran el President portant la bandera fins a la Parròquia.',
           },
@@ -540,9 +540,11 @@ export const SORTIDES = [
         assignacions: [
           {
             descripcio:
-              '6 persones vetllant pel transcurs de la Processó, repartint aigües i col·locant els balls',
+              '7 persones vetllant pel transcurs de la Processó, repartint aigües i col·locant els balls',
             persones: [
               'Raquel Llorià',
+              'Maria Lluís',
+              'Mar Jaime',
               'Aleix Ibàñez',
               'Vinyet Baqués',
               'Vinyet Casolivé',
@@ -556,10 +558,14 @@ export const SORTIDES = [
       hiHa: true,
       grups: [
         {
-          rol: 'Voluntariat acompanyant el seguici',
+          rol: '10 voluntaris acompanyant el seguici',
           punts: [
             { lloc: 'Ball de Cabeçuts', persones: ['Cristina Gràcia'] },
-            { lloc: 'Colles de Foc', persones: ['Raimon Miró'] },
+            {
+              lloc: 'Colles de Foc',
+              persones: ['Raimon Miró'],
+              nota: 'Només fins al Cap de la Vila.',
+            },
             {
               lloc: 'Ball de Bastons Colla Jove; Colla Noies; i Gitanes Vila',
               persones: [],
@@ -654,7 +660,7 @@ export const SORTIDES = [
         lloc: 'Fragata (final de les escales)',
         assignacions: [
           {
-            descripcio: 'President + 5 persones fixes vetllant pel transcurs de la cercavila',
+            descripcio: 'President + 4 persones fixes vetllant pel transcurs de la cercavila',
             persones: [
               'Xavier Salmerón (President)',
               'Gabri González',
@@ -790,7 +796,7 @@ export const SORTIDES = [
       hiHa: true,
       grups: [
         {
-          rol: 'Voluntariat ajudant amb el repartiment de l’esmorzar a l’Ajuntament',
+          rol: '10 voluntaris a l’Ajuntament amb el repartiment de l’esmorzar',
           punts: [{ lloc: 'Ajuntament', persones: [], pendent: 'Pendent d’assignar' }],
         },
       ],
@@ -1093,13 +1099,16 @@ export const SORTIDES = [
             { lloc: 'Ball de Cabeçuts', persones: ['Biel Domènech', 'Pol Meseguer'] },
             {
               lloc: 'Colles de Foc',
-              persones: ['Jordi Salmerón', 'Enric Massó', 'Joan Mas', 'Raimon Miró'],
+              persones: ['Jordi Salmerón', 'Enric Massó', 'Joan Mas', 'Jesus Eroles', 'Raimon Miró'],
             },
-            { lloc: 'Ball de Bastons Colla Jove; Colla Noies; i Gitanes Vila', persones: ['Judit Virgili'] },
-            { lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella', persones: ['Maria Boy'] },
+            {
+              lloc: 'Ball de Bastons Colla Jove; Colla Noies; i Gitanes Vila',
+              persones: ['Maria Carreras'],
+            },
+            { lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella', persones: ['Andrés Sanz'] },
             {
               lloc: 'Cercolets, Pastorets, Panderetes i Cintes',
-              persones: ['Maria Carreras', 'Andrés Sanz'],
+              persones: ['Judit Virgili', 'Maria Boy'],
             },
             { lloc: 'Gitanes ABPS i Moixiganga', persones: ['Josep Maria Esteban'] },
           ],
