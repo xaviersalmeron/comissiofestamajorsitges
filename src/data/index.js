@@ -4,6 +4,12 @@ import { DISPOSITIU_SANITARI, dispositiuDeSortida, TELEFONS_EMERGENCIA } from '.
 import { TRAM_EN_CALMA } from './tramEnCalma.js'
 import { ELEMENTS, ELEMENTS_PER_ID, CATEGORIES, nomElement, nomCurtElement } from './elements.js'
 import { SEGURETAT_PER_ACTE, COSSOS, comptaSeguretat, cossosAmbContingut } from './seguretat.js'
+import {
+  ACOMPANYAMENT_MUSICAL,
+  BALLS_PER_COLLA,
+  acompanyamentDeSortida,
+  collaTocaA,
+} from './acompanyamentMusical.js'
 
 export {
   SORTIDES,
@@ -22,6 +28,10 @@ export {
   COSSOS,
   comptaSeguretat,
   cossosAmbContingut,
+  ACOMPANYAMENT_MUSICAL,
+  BALLS_PER_COLLA,
+  acompanyamentDeSortida,
+  collaTocaA,
 }
 
 /** Quadre de seguretat propi d'un acte, si en té al document. */
@@ -44,8 +54,11 @@ export const normalitza = (text) =>
     .replace(/[’']/g, "'")
 
 /** Només els elements que apareixen realment en alguna sortida. */
+export const participaA = (elementId, sortida) =>
+  !!sortida.ordre?.includes(elementId) || collaTocaA(elementId, sortida)
+
 export const ELEMENTS_ACTIUS = ELEMENTS.filter((el) =>
-  SORTIDES.some((s) => s.ordre?.includes(el.id)),
+  SORTIDES.some((s) => participaA(el.id, s)),
 )
 
 /** Elements agrupats per categoria, per pintar el filtre. */
@@ -58,7 +71,7 @@ export const ELEMENTS_PER_CATEGORIA = Object.values(CATEGORIES)
 
 /** Nombre de sortides en què participa cada element. */
 export const RECOMPTE_PER_ELEMENT = Object.fromEntries(
-  ELEMENTS.map((el) => [el.id, SORTIDES.filter((s) => s.ordre?.includes(el.id)).length]),
+  ELEMENTS.map((el) => [el.id, SORTIDES.filter((s) => participaA(el.id, s)).length]),
 )
 
 /**
@@ -95,6 +108,7 @@ const textDeSortida = (s) =>
       ...g.punts.flatMap((p) => [p.lloc, p.pendent ?? '', ...(p.persones ?? [])]),
     ]),
     s.voluntariat?.nota ?? '',
+    ...acompanyamentDeSortida(s).flatMap((a) => [nomElement(a.ball), nomElement(a.colla)]),
     ...COSSOS.flatMap((c) => [
       SEGURETAT_PER_ACTE[s.id]?.[c.id]?.length ? c.nom : '',
       ...(SEGURETAT_PER_ACTE[s.id]?.[c.id] ?? []),
@@ -116,7 +130,7 @@ export function filtraSortides({ cerca = '', elements = [], dia = null } = {}) {
   const q = normalitza(cerca).trim()
   return SORTIDES.filter((s) => {
     if (dia && s.dia !== dia) return false
-    if (elements.length && !elements.some((id) => s.ordre?.includes(id))) return false
+    if (elements.length && !elements.some((id) => participaA(id, s))) return false
     if (q && !q.split(/\s+/).every((token) => INDEX_CERCA[s.id].includes(token))) return false
     return true
   })
@@ -162,6 +176,11 @@ export const SORTIDES_AMB_BOMBERS = SORTIDES.filter(
 /** Punts habilitats per a persones usuàries de cadira de rodes. */
 export const PUNTS_ACCESSIBLES = SORTIDES.filter((s) => (s.accessibilitat ?? []).length > 0).map(
   (s) => ({ sortidaId: s.id, titol: s.titol, punts: s.accessibilitat }),
+)
+
+/** Sortides on una colla de música acompanya algun ball. */
+export const SORTIDES_AMB_ACOMPANYAMENT = SORTIDES.filter(
+  (s) => acompanyamentDeSortida(s).length > 0,
 )
 
 /** Sortides que travessen el Tram en Calma. */

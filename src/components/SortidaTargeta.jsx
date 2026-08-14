@@ -11,13 +11,15 @@ import {
   IcFletxa,
   IcLlista,
   IcMapa,
+  IcMusica,
   IcPluja,
   IcRellotge,
   IcVoluntariat,
 } from './Icones.jsx'
 import { dispositiuDeSortida } from '../data/dispositiuSanitari.js'
 import { comptaSeguretat, cossosAmbContingut, SEGURETAT_PER_ACTE } from '../data/seguretat.js'
-import { ELEMENTS_PER_ID } from '../data/elements.js'
+import { ELEMENTS_PER_ID, nomElement } from '../data/elements.js'
+import { acompanyamentDeSortida } from '../data/acompanyamentMusical.js'
 
 const seguretatDeSortida = (id) => SEGURETAT_PER_ACTE[id] ?? null
 
@@ -32,33 +34,78 @@ const TONS_TIPUS = {
 }
 
 /** Xips de l'ordre de sortida, ressaltant els elements filtrats per l'usuari. */
-function OrdreSortida({ ordre, destacats }) {
+function OrdreSortida({ ordre, destacats, disposicio }) {
+  const Llista = disposicio ? 'ul' : 'ol'
   return (
-    <ol className="flex flex-wrap gap-1.5">
+    <Llista className="flex flex-wrap gap-1.5">
       {ordre.map((id, i) => {
         const destacat = destacats.includes(id)
         const el = ELEMENTS_PER_ID[id]
         return (
           <li
             key={`${id}-${i}`}
-            className={`inline-flex items-center gap-1.5 rounded-lg py-1 pr-2.5 pl-1.5 text-xs font-medium transition-colors duration-200 ${
+            className={`inline-flex items-center gap-1.5 rounded-lg py-1 pr-2.5 text-xs font-medium transition-colors duration-200 ${
+              disposicio ? 'pl-2.5' : 'pl-1.5'
+            } ${
               destacat
                 ? 'bg-fm-vermell-600 text-white shadow-sm'
                 : 'bg-white text-slate-600 ring-1 ring-slate-200 ring-inset'
             }`}
           >
-            <span
-              className={`grid h-5 w-5 place-items-center rounded-md text-[10px] font-bold tabular-nums ${
-                destacat ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
-              }`}
-            >
-              {i + 1}
-            </span>
+            {/* La numeració només s'ha de llegir com a ordre quan n'hi ha */}
+            {!disposicio && (
+              <span
+                className={`grid h-5 w-5 place-items-center rounded-md text-[10px] font-bold tabular-nums ${
+                  destacat ? 'bg-white/20 text-white' : 'bg-slate-100 text-slate-500'
+                }`}
+              >
+                {i + 1}
+              </span>
+            )}
             {el?.curt ?? id}
           </li>
         )
       })}
-    </ol>
+    </Llista>
+  )
+}
+
+/** Quadre d'acompanyament musical: quina colla toca per a cada ball. */
+function BlocAcompanyament({ parelles, destacats }) {
+  return (
+    <section>
+      <h4 className="mb-2.5 flex items-center gap-2 text-sm font-bold text-slate-800">
+        <IcMusica className="h-4 w-4 text-fm-blau-600" /> Acompanyament musical dels balls
+      </h4>
+      <ul className="grid gap-1.5 sm:grid-cols-2">
+        {parelles.map((a) => {
+          const destacat = destacats.includes(a.ball) || destacats.includes(a.colla)
+          return (
+            <li
+              key={a.ball}
+              className={`flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-xs transition-colors duration-200 ${
+                destacat
+                  ? 'bg-fm-vermell-50 ring-1 ring-fm-vermell-200 ring-inset'
+                  : 'bg-slate-50'
+              }`}
+            >
+              <span className="text-slate-600">{nomElement(a.ball)}</span>
+              <span className="shrink-0 text-right font-semibold text-fm-blau-800">
+                {nomElement(a.colla)}
+                {a.integrantsPendents && (
+                  <span className="block text-[10px] font-normal text-slate-400 italic">
+                    integrants pendents
+                  </span>
+                )}
+              </span>
+            </li>
+          )
+        })}
+      </ul>
+      <p className="mt-2 text-xs text-slate-500 italic">
+        Quadre facilitat per la Comissió, a banda del document de consignes.
+      </p>
+    </section>
   )
 }
 
@@ -215,7 +262,7 @@ function BlocComissio({ blocs }) {
       titol="Presència de la Comissió de Festa Major"
       icona={IcComissio}
       to="blau"
-      recompte={blocs.length ? `${blocs.length} punts` : null}
+      recompte={blocs.length ? `${blocs.length} ${blocs.length === 1 ? 'punt' : 'punts'}` : null}
       buit={blocs.length === 0 ? 'Sense assignacions de la Comissió en aquest acte.' : null}
     >
       <div className="space-y-3">
@@ -279,7 +326,7 @@ function BlocVoluntariat({ voluntariat }) {
       titol="Presència del voluntariat"
       icona={IcVoluntariat}
       to="sorra"
-      recompte={grups.length ? `${grups.length} grups` : null}
+      recompte={grups.length ? `${grups.length} ${grups.length === 1 ? 'grup' : 'grups'}` : null}
       buit={grups.length === 0 ? (voluntariat?.nota ?? 'No hi haurà voluntariat.') : null}
     >
       <div className="space-y-3">
@@ -365,6 +412,7 @@ function Comptadors({ sortida }) {
 export default function SortidaTargeta({ sortida, obert, onToggle, destacats = [] }) {
   const idPanell = useId()
   const to = TONS_TIPUS[sortida.tipus] ?? 'slate'
+  const acompanyament = acompanyamentDeSortida(sortida)
 
   return (
     <article
@@ -426,13 +474,22 @@ export default function SortidaTargeta({ sortida, obert, onToggle, destacats = [
           {sortida.ordre?.length > 0 && (
             <section>
               <h4 className="mb-2.5 flex items-center gap-2 text-sm font-bold text-slate-800">
-                <IcLlista className="h-4 w-4 text-fm-blau-600" /> Ordre de sortida
+                <IcLlista className="h-4 w-4 text-fm-blau-600" />
+                {sortida.disposicio ? 'Disposició dels balls' : 'Ordre de sortida'}
               </h4>
-              <OrdreSortida ordre={sortida.ordre} destacats={destacats} />
+              <OrdreSortida
+                ordre={sortida.ordre}
+                destacats={destacats}
+                disposicio={sortida.disposicio}
+              />
               {sortida.ordreNota && (
                 <p className="mt-2 text-xs text-slate-500 italic">{sortida.ordreNota}</p>
               )}
             </section>
+          )}
+
+          {acompanyament.length > 0 && (
+            <BlocAcompanyament parelles={acompanyament} destacats={destacats} />
           )}
 
           {sortida.recorregut && (
@@ -534,7 +591,7 @@ export default function SortidaTargeta({ sortida, obert, onToggle, destacats = [
           )}
 
           {/* Els quatre subapartats operatius, sempre en el mateix ordre */}
-          <div className="grid gap-4 pt-1 lg:grid-cols-2">
+          <div className="grid items-start gap-4 pt-1 lg:grid-cols-2">
             <BlocAigua punts={sortida.puntsAigua ?? []} />
             <BlocSeguretat sortidaId={sortida.id} />
             <BlocComissio blocs={sortida.comissio ?? []} />

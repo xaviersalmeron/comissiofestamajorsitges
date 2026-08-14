@@ -31,6 +31,7 @@ src/
     consignesGenerals.js   bloc 1 de l'índex
     sortides.js            bloc 2: les 12 sortides del seguici
     seguretat.js           quadre de seguretat de cada acte (4 cossos)
+    acompanyamentMusical.js  quina colla de gralles acompanya cada ball
     dispositiuSanitari.js  annex I
     tramEnCalma.js         annex II
     index.js               selectors derivats: cerca, filtres i agregats
@@ -89,6 +90,17 @@ coberta pel dispositiu de la Processó de Sant Bartomeu. L'únic acte sense cap 
 L'Annex I es manté com a vista pròpia perquè hi consten els totals per acte i el protocol de trucada
 a la Creu Roja.
 
+## Acompanyament musical dels balls
+
+A banda del document de consignes, la Comissió facilita un quadre que assigna a cada ball la colla
+de grallers o sacaires que l'acompanya. S'aplica a tots els actes tradicionals **excepte la
+presentació del cabeçut «El Patufet»**, i a l'app surt dins de cada acte, filtrat als balls que hi
+participen i marcat com a font externa al document.
+
+Com que el quadre lliga colles i balls, el filtre per element també l'utilitza: seleccionar l'Escola
+de Grallers de Sitges mostra els 11 actes on toca, no només l'Entrada de Grallers. Els balls dels
+quals encara no s'han indicat els integrants surten marcats com a «integrants pendents».
+
 ## Funcionalitats
 
 - **Filtre per element festiu o acte.** Cerca lliure sobre tot el text consultable de cada sortida
@@ -99,9 +111,8 @@ a la Creu Roja.
 - **Accés directe a seguretat/emergències i punts d'aigua.** Dos botons permanents a la capçalera
   obren un calaix lateral amb els telèfons d'emergència (com a enllaços `tel:`), el desplegament de
   Policia, Seguretat, Creu Roja i Bombers de tots els actes i els punts habilitats per a persones
-  usuàries de cadira de rodes, o bé
-  els 34 punts d'aigua de la Festa agrupats per sortida. Des del calaix es pot saltar a les
-  consignes completes de qualsevol acte.
+  usuàries de cadira de rodes, o bé els 34 punts d'aigua de la Festa agrupats per sortida. Des del
+  calaix es pot saltar a les consignes completes de qualsevol acte.
 
 ## Disseny
 
@@ -118,3 +129,9 @@ Americanos». Les xifres i els noms de l'app segueixen ara el document sense cap
 
 Queden tres grups de voluntariat pendents d'assignar al document (dos a la Processó Cívica de la
 Bandera i l'esmorzar de la Matinal); a l'app hi surten marcats com a «Pendent d'assignar».
+
+L'Entrada del Sant no té ordre de sortida al document: només un plànol de disposició al Baluard. La
+llista d'elements d'aquest acte està llegida del plànol i es presenta com a «Disposició dels balls»,
+sense numerar, perquè no codifica cap seqüència. El plànol hi situa un únic bloc de Bastons («1 colla
+de bastons») mentre que el text parla de «les colles del Ball de Bastons» en plural; l'app manté la
+colla que hi surt i deixa la discrepància anotada a l'acte.

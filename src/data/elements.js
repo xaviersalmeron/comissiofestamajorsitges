@@ -25,10 +25,10 @@ export const ELEMENTS = [
   },
   { id: 'gegants-moros', nom: 'Gegants Moros', curt: 'G. Moros', categoria: 'imatgeria' },
   { id: 'cabecuts', nom: 'Ball de Cabeçuts', curt: 'Cabeçuts', categoria: 'imatgeria' },
-  { id: 'aliga', nom: "Àliga", curt: 'Àliga', categoria: 'imatgeria' },
 
   // Foc i bèsties
   { id: 'drac', nom: 'Drac', curt: 'Drac', categoria: 'foc' },
+  { id: 'aliga', nom: 'Àliga', curt: 'Àliga', categoria: 'foc' },
   {
     id: 'diables-vella',
     nom: 'Ball de Diables Colla Vella',
