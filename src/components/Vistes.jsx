@@ -1,5 +1,5 @@
 import Planol from './Planol.jsx'
-import { CapcaleraVista, Etiqueta, EstatBuit } from './ui.jsx'
+import { CapcaleraVista, Etiqueta } from './ui.jsx'
 import { LlistaPunts } from './SortidaTargeta.jsx'
 import {
   ICONA_CATEGORIA,
@@ -10,17 +10,13 @@ import {
   IcInfo,
   IcMapa,
   IcMusica,
-  IcTelefon,
 } from './Icones.jsx'
 import {
   CONSIGNES_GENERALS,
   SORTIDES,
   TRAM_EN_CALMA,
-  TELEFONS_EMERGENCIA,
-  DISPOSITIU_SANITARI,
   nomCurtElement,
 } from '../data/index.js'
-import { LLEGENDA_RECURSOS } from '../data/dispositiuSanitari.js'
 
 /* ─────────────────────────────  CONSIGNES GENERALS  ───────────────────────── */
 
@@ -271,137 +267,6 @@ export function VistaTramCalma({ onFiltraElement }) {
               </div>
             )}
           </section>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-/* ─────────────────────────────  DISPOSITIU SANITARI  ──────────────────────── */
-
-export function VistaSanitari({ onVesASortida }) {
-  const entrades = Object.entries(DISPOSITIU_SANITARI)
-
-  if (entrades.length === 0) {
-    return (
-      <EstatBuit
-        titol="Sense dispositiu sanitari registrat"
-        descripcio="L’Annex I del document no conté cap desplegament de recursos."
-      />
-    )
-  }
-
-  return (
-    <div className="anim-entrada">
-      <CapcaleraVista
-        eyebrow="Annex I"
-        titol="Dispositiu sanitari"
-        descripcio="Desplegament de la Creu Roja acte per acte: ambulàncies, socorristes i telèfons del protocol d’actuació."
-      />
-
-      {/* Telèfons */}
-      <section className="mb-5 grid gap-3 sm:grid-cols-3">
-        {TELEFONS_EMERGENCIA.contactes.map((c) => (
-          <a
-            key={c.telefon}
-            href={`tel:${c.telefon.replace(/\s/g, '')}`}
-            className={`flex items-center gap-3 rounded-2xl p-4 transition-all duration-200 active:scale-[0.99] ${
-              c.destacat
-                ? 'bg-fm-vermell-600 text-white shadow-md shadow-fm-vermell-900/20 hover:bg-fm-vermell-700'
-                : 'border border-slate-200 bg-white hover:border-fm-vermell-300'
-            }`}
-          >
-            <span
-              className={`grid h-10 w-10 shrink-0 place-items-center rounded-xl ${
-                c.destacat ? 'bg-white/20' : 'bg-fm-vermell-50 text-fm-vermell-600'
-              }`}
-            >
-              <IcTelefon />
-            </span>
-            <span className="min-w-0">
-              <span className="block text-sm font-bold">{c.nom}</span>
-              <span
-                className={`block text-base font-bold tabular-nums ${
-                  c.destacat ? 'text-white' : 'text-fm-vermell-700'
-                }`}
-              >
-                {c.telefon}
-              </span>
-            </span>
-          </a>
-        ))}
-      </section>
-
-      <section className="mb-5 rounded-2xl border border-amber-200 bg-amber-50 p-4">
-        <p className="flex gap-2 text-sm leading-relaxed text-amber-900">
-          <IcAvis className="mt-0.5 h-4 w-4 shrink-0" />
-          {TELEFONS_EMERGENCIA.avis}
-        </p>
-        <p className="mt-1.5 text-xs text-amber-800/90">{TELEFONS_EMERGENCIA.restriccio}</p>
-      </section>
-
-      {/* Llegenda */}
-      <section className="mb-5 rounded-2xl border border-slate-200 bg-white p-4">
-        <h3 className="mb-2.5 text-xs font-bold tracking-wider text-slate-400 uppercase">
-          Llegenda dels recursos
-        </h3>
-        <ul className="grid gap-2 sm:grid-cols-2">
-          {LLEGENDA_RECURSOS.map((l) => (
-            <li key={l.sigla} className="flex items-start gap-2 text-sm text-slate-600">
-              <span className="mt-px inline-flex shrink-0 rounded bg-fm-vermell-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
-                {l.sigla}
-              </span>
-              {l.nom}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <div className="space-y-3">
-        {entrades.map(([id, d]) => (
-          <article
-            key={id}
-            className="anim-puja rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"
-          >
-            <button
-              type="button"
-              onClick={() => onVesASortida(id)}
-              className="group mb-3 flex w-full items-start gap-3 text-left"
-            >
-              <span className="min-w-0 flex-1">
-                <span className="mb-1 block text-xs font-semibold text-slate-500">
-                  {d.dia} · {d.franja}
-                </span>
-                <span className="block text-base font-bold text-slate-900 group-hover:text-fm-blau-700">
-                  {d.acte}
-                </span>
-              </span>
-              <IcFletxa className="mt-1 h-5 w-5 shrink-0 text-slate-300 transition-transform group-hover:translate-x-1 group-hover:text-fm-blau-600" />
-            </button>
-
-            <p className="mb-3 text-xs text-slate-500">
-              <span className="font-semibold">{d.recorregut ? 'Recorregut:' : 'Lloc:'}</span>{' '}
-              {d.recorregut ?? d.lloc}
-            </p>
-
-            <ul className="space-y-2">
-              {d.recursos.map((r, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-2.5 rounded-xl bg-slate-50 px-3 py-2.5 text-sm text-slate-700"
-                >
-                  <span className="mt-px inline-flex shrink-0 rounded bg-fm-vermell-600 px-1.5 py-0.5 text-[10px] font-bold text-white">
-                    {r.tipus}
-                  </span>
-                  {r.text}
-                </li>
-              ))}
-            </ul>
-
-            <p className="mt-3 inline-flex rounded-lg bg-fm-vermell-50 px-3 py-1.5 text-xs font-bold text-fm-vermell-800">
-              Total: {d.total}
-            </p>
-          </article>
         ))}
       </div>
     </div>

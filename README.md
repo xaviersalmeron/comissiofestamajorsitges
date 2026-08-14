@@ -32,6 +32,7 @@ src/
     sortides.js            bloc 2: les 12 sortides del seguici
     seguretat.js           quadre de seguretat de cada acte (4 cossos)
     acompanyamentMusical.js  quina colla de gralles acompanya cada ball
+    contactes.js           telèfons de les acreditacions (organització i premsa)
     dispositiuSanitari.js  annex I
     tramEnCalma.js         annex II
     index.js               selectors derivats: cerca, filtres i agregats
@@ -39,8 +40,8 @@ src/
     Capcalera.jsx      capçalera, navegació d'escriptori i barra inferior mòbil
     BarraFiltres.jsx   cerca lliure + filtre per dia i per element festiu
     SortidaTargeta.jsx targeta d'una sortida amb els quatre subapartats
-    PanelRapid.jsx     accés directe a emergències i punts d'aigua
-    Vistes.jsx         consignes generals, recorreguts, tram en calma, sanitari
+    PanelRapid.jsx     calaixos d'emergències, punts d'aigua i contactes
+    Vistes.jsx         consignes generals, recorreguts i tram en calma
     Planol.jsx         plànol amb ampliació a pantalla completa
     Icones.jsx         icones SVG inline
     ui.jsx             primitives compartides i estats buits
@@ -58,8 +59,11 @@ L'app segueix l'ordre de l'índex del document:
    grallers/timbalers/sacaires i banda).
 2. **Consignes detallades per a cada sortida** — les 12 sortides, del 22 al 29 d'agost.
 3. **Recorreguts** — plànol general i itinerari escrit de cada sortida.
-4. **Annex I · Dispositiu sanitari**.
-5. **Annex II · Tram en Calma**.
+4. **Annex II · Tram en Calma**.
+
+L'Annex I (dispositiu sanitari) no té pestanya pròpia: el seu contingut —la llegenda dels recursos i
+el desplegament de Creu Roja de cada acte— viu dins del calaix de seguretat i emergències, que és on
+es consulta quan fa falta.
 
 Dins de cada sortida, els quatre subapartats operatius surten sempre en el mateix ordre i amb el
 mateix codi de color, de manera que es puguin localitzar d'una ullada:
@@ -108,11 +112,17 @@ quals encara no s'han indicat els integrants surten marcats com a «integrants p
   amb filtre per dia i per element del seguici. Els elements estan agrupats per categoria i el
   filtre és acumulatiu (OR). En filtrar per un element, aquest queda ressaltat dins l'ordre de
   sortida de cada acte.
-- **Accés directe a seguretat/emergències i punts d'aigua.** Dos botons permanents a la capçalera
-  obren un calaix lateral amb els telèfons d'emergència (com a enllaços `tel:`), el desplegament de
-  Policia, Seguretat, Creu Roja i Bombers de tots els actes i els punts habilitats per a persones
-  usuàries de cadira de rodes, o bé els 34 punts d'aigua de la Festa agrupats per sortida. Des del
-  calaix es pot saltar a les consignes completes de qualsevol acte.
+- **Accés directe des de la capçalera.** Tres botons permanents obren calaixos laterals:
+  - **Punts d'aigua** — els 34 punts de la Festa agrupats per sortida.
+  - **Contactes** — els 25 telèfons de les acreditacions, com a enllaços `tel:`, en l'ordre dels
+    PDF: Comissió, Regidoria de Tradicions i Festes, Policia Local, Emergències, dispositiu sanitari
+    i Departament de Premsa.
+  - **Seguretat i emergències** — el 112, el protocol d'actuació, la llegenda dels recursos i el
+    desplegament de Policia, Seguretat, Creu Roja i Bombers de tots els actes, amb els punts
+    habilitats per a persones usuàries de cadira de rodes.
+
+  Des de qualsevol calaix es pot saltar a les consignes completes d'un acte. El calaix d'emergències
+  només porta el 112: la resta de telèfons són a Contactes, i hi enllaça directament.
 
 ## Disseny
 
@@ -129,6 +139,11 @@ Americanos». Les xifres i els noms de l'app segueixen ara el document sense cap
 
 Queden tres grups de voluntariat pendents d'assignar al document (dos a la Processó Cívica de la
 Bandera i l'esmorzar de la Matinal); a l'app hi surten marcats com a «Pendent d'assignar».
+
+La Cobla no consta a les consignes, però hi és present a la Sortida de les Dues, la Sortida d'Ofici
+i la Processó de Sant Bartomeu. Com que no desfila —toca des d'un punt fix del recorregut— es modela
+amb `participantsExtra` i es llista a banda de l'ordre de marxa, indicant on és. El filtre per
+element sí que la té en compte.
 
 L'Entrada del Sant no té ordre de sortida al document: només un plànol de disposició al Baluard. La
 llista d'elements d'aquest acte està llegida del plànol i es presenta com a «Disposició dels balls»,

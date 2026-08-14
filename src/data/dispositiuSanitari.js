@@ -14,11 +14,9 @@
 export const TELEFONS_EMERGENCIA = {
   avis: 'En cas d’emergència i no trobar un membre/voluntari de la Comissió de Sant Bartomeu i Santa Tecla, cal dirigir-se immediatament al socorrista o ambulància més propera.',
   restriccio:
-    'Només en casos greus, es podrà contactar amb els responsables del dispositiu mèdic de la Creu Roja:',
+    'Només en casos greus es pot trucar als responsables del dispositiu mèdic de la Creu Roja: els trobareu a Contactes.',
   contactes: [
     { nom: 'Emergències', rol: 'Telèfon únic d’emergències', telefon: '112', destacat: true },
-    { nom: 'Juanjo Martín', rol: 'Responsable dispositiu Creu Roja', telefon: '627 56 35 00' },
-    { nom: 'Merche Verdejo', rol: 'Responsable dispositiu Creu Roja', telefon: '678 40 18 87' },
   ],
 }
 

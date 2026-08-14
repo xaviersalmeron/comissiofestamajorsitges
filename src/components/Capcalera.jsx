@@ -1,12 +1,11 @@
 import { META } from '../data/index.js'
-import { IcAigua, IcCalma, IcEmergencia, IcLlista, IcMapa, IcInfo } from './Icones.jsx'
+import { IcAigua, IcCalma, IcEmergencia, IcLlista, IcMapa, IcInfo, IcTelefon } from './Icones.jsx'
 
 export const VISTES = [
   { id: 'sortides', nom: 'Sortides', curt: 'Sortides', icona: IcLlista },
   { id: 'generals', nom: 'Consignes generals', curt: 'Generals', icona: IcInfo },
   { id: 'recorreguts', nom: 'Recorreguts', curt: 'Recorreguts', icona: IcMapa },
   { id: 'calma', nom: 'Tram en Calma', curt: 'Calma', icona: IcCalma },
-  { id: 'sanitari', nom: 'Dispositiu sanitari', curt: 'Sanitari', icona: IcEmergencia },
 ]
 
 /** Marca gràfica del logotip: la retícula de cercles vermells, blaus i sorra. */
@@ -51,18 +50,29 @@ export default function Capcalera({ vista, onVista, onPanel }) {
             <button
               type="button"
               onClick={() => onPanel('aigua')}
+              aria-label="Punts d’aigua"
               className="inline-flex items-center gap-2 rounded-xl bg-sky-50 px-3 py-2.5 text-sm font-semibold text-sky-700 ring-1 ring-sky-200 ring-inset transition-all duration-200 hover:bg-sky-100 active:scale-95"
             >
               <IcAigua className="h-4.5 w-4.5" />
-              <span className="hidden sm:inline">Punts d’aigua</span>
+              <span className="hidden lg:inline">Punts d’aigua</span>
+            </button>
+            <button
+              type="button"
+              onClick={() => onPanel('contactes')}
+              aria-label="Contactes"
+              className="inline-flex items-center gap-2 rounded-xl bg-slate-100 px-3 py-2.5 text-sm font-semibold text-slate-700 ring-1 ring-slate-200 ring-inset transition-all duration-200 hover:bg-slate-200 active:scale-95"
+            >
+              <IcTelefon className="h-4.5 w-4.5" />
+              <span className="hidden lg:inline">Contactes</span>
             </button>
             <button
               type="button"
               onClick={() => onPanel('emergencies')}
+              aria-label="Emergències"
               className="inline-flex items-center gap-2 rounded-xl bg-fm-vermell-600 px-3 py-2.5 text-sm font-semibold text-white shadow-sm transition-all duration-200 hover:bg-fm-vermell-700 active:scale-95"
             >
               <IcEmergencia className="h-4.5 w-4.5" />
-              <span className="hidden sm:inline">Emergències</span>
+              <span className="hidden lg:inline">Emergències</span>
             </button>
           </div>
         </div>

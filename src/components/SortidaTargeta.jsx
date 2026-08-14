@@ -485,6 +485,27 @@ export default function SortidaTargeta({ sortida, obert, onToggle, destacats = [
               {sortida.ordreNota && (
                 <p className="mt-2 text-xs text-slate-500 italic">{sortida.ordreNota}</p>
               )}
+
+              {/* Elements presents que no desfilen: toquen des d'un punt fix */}
+              {sortida.participantsExtra?.length > 0 && (
+                <ul className="mt-3 space-y-1.5">
+                  {sortida.participantsExtra.map((p) => (
+                    <li
+                      key={p.element}
+                      className={`flex flex-wrap items-baseline gap-x-2 gap-y-0.5 rounded-lg px-3 py-2 text-xs transition-colors duration-200 ${
+                        destacats.includes(p.element)
+                          ? 'bg-fm-vermell-50 ring-1 ring-fm-vermell-200 ring-inset'
+                          : 'bg-slate-50'
+                      }`}
+                    >
+                      <span className="font-semibold text-slate-700">
+                        {nomElement(p.element)}
+                      </span>
+                      <span className="text-slate-500">{p.nota}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </section>
           )}
 

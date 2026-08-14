@@ -242,6 +242,12 @@ export const SORTIDES = [
       'moixiganga',
       'banda',
     ],
+    participantsExtra: [
+      {
+        element: 'cobla',
+        nota: 'Al Cap de la Vila, per a la ballada conjunta de la sardana de La Festa Major.',
+      },
+    ],
     protocolPluja:
       'En cas de pluja, previsió de pluja o de qualsevol emergència que pugui afectar el desenvolupament de la cercavila, es convocarà una reunió entre la Comissió i els Caps de Colla a les 13.30 h a l’Auditori del Miramar per debatre la situació i prendre una decisió conjunta i que serà inapel·lable. El protocol contempla la possibilitat de modificar els horaris i recorreguts en funció de la situació. Si plou un cop iniciada la cercavila, la Comissió prendrà les decisions oportunes i ho comunicarà als caps de colla i als voluntaris dels balls.',
     indicacions: [
@@ -837,7 +843,9 @@ export const SORTIDES = [
       'cercolets',
       'castellers',
       'banda',
-      'cobla',
+    ],
+    participantsExtra: [
+      { element: 'cobla', nota: 'A la tarima habilitada als Jardins del Doctor Robert.' },
     ],
     ordreNota:
       'Les tres colles del Ball de Diables surten amb els seus timbalers. Encapçala el seguici la Banda, que acompanya les autoritats.',
@@ -971,6 +979,12 @@ export const SORTIDES = [
       'banda',
     ],
     ordreNota: 'La Banda tanca el seguici amb les autoritats.',
+    participantsExtra: [
+      {
+        element: 'cobla',
+        nota: 'Al Passeig de la Ribera, per a la sardana conjunta de les tres colles de Gegants.',
+      },
+    ],
     tramCalma: {
       tram: 'Carrer de Sant Gaudenci, amb inici a la meitat del carrer Sant Bartomeu i final passada la cruïlla amb carrer Sant Francesc.',
       nota: 'Hi haurà una persona de la Comissió donant l’ordre per començar el tram en calma. Consignes per colla a l’Annex II.',

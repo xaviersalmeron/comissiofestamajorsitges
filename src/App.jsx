@@ -3,7 +3,7 @@ import Capcalera, { NavegacioMobil } from './components/Capcalera.jsx'
 import BarraFiltres from './components/BarraFiltres.jsx'
 import SortidaTargeta from './components/SortidaTargeta.jsx'
 import PanelRapid from './components/PanelRapid.jsx'
-import { VistaGenerals, VistaRecorreguts, VistaSanitari, VistaTramCalma } from './components/Vistes.jsx'
+import { VistaGenerals, VistaRecorreguts, VistaTramCalma } from './components/Vistes.jsx'
 import { Boto, EstatBuit } from './components/ui.jsx'
 import { IcCerca, IcLlista } from './components/Icones.jsx'
 import { META, SORTIDES, filtraSortides, nomCurtElement } from './data/index.js'
@@ -140,7 +140,6 @@ export default function App() {
         {vista === 'generals' && <VistaGenerals onFiltraElement={filtraPerElement} />}
         {vista === 'recorreguts' && <VistaRecorreguts onVesASortida={vesASortida} />}
         {vista === 'calma' && <VistaTramCalma onFiltraElement={filtraPerElement} />}
-        {vista === 'sanitari' && <VistaSanitari onVesASortida={vesASortida} />}
 
         <footer className="mt-12 border-t border-slate-200 pt-6 text-center">
           <img
@@ -160,7 +159,12 @@ export default function App() {
       </main>
 
       <NavegacioMobil vista={vista} onVista={setVista} />
-      <PanelRapid mode={panel} onTanca={() => setPanel(null)} onVesASortida={vesASortida} />
+      <PanelRapid
+        mode={panel}
+        onTanca={() => setPanel(null)}
+        onVesASortida={vesASortida}
+        onContactes={() => setPanel('contactes')}
+      />
     </div>
   )
 }

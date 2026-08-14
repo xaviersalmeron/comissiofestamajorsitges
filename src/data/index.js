@@ -10,6 +10,7 @@ import {
   acompanyamentDeSortida,
   collaTocaA,
 } from './acompanyamentMusical.js'
+import { CONTACTES, TOTAL_CONTACTES, telHref } from './contactes.js'
 
 export {
   SORTIDES,
@@ -32,6 +33,9 @@ export {
   BALLS_PER_COLLA,
   acompanyamentDeSortida,
   collaTocaA,
+  CONTACTES,
+  TOTAL_CONTACTES,
+  telHref,
 }
 
 /** Quadre de seguretat propi d'un acte, si en té al document. */
@@ -55,7 +59,9 @@ export const normalitza = (text) =>
 
 /** Només els elements que apareixen realment en alguna sortida. */
 export const participaA = (elementId, sortida) =>
-  !!sortida.ordre?.includes(elementId) || collaTocaA(elementId, sortida)
+  !!sortida.ordre?.includes(elementId) ||
+  !!sortida.participantsExtra?.some((p) => p.element === elementId) ||
+  collaTocaA(elementId, sortida)
 
 export const ELEMENTS_ACTIUS = ELEMENTS.filter((el) =>
   SORTIDES.some((s) => participaA(el.id, s)),
@@ -108,6 +114,7 @@ const textDeSortida = (s) =>
       ...g.punts.flatMap((p) => [p.lloc, p.pendent ?? '', ...(p.persones ?? [])]),
     ]),
     s.voluntariat?.nota ?? '',
+    ...(s.participantsExtra ?? []).flatMap((p) => [nomElement(p.element), p.nota]),
     ...acompanyamentDeSortida(s).flatMap((a) => [nomElement(a.ball), nomElement(a.colla)]),
     ...COSSOS.flatMap((c) => [
       SEGURETAT_PER_ACTE[s.id]?.[c.id]?.length ? c.nom : '',
