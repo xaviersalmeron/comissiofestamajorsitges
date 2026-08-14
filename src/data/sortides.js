@@ -25,7 +25,7 @@ export const SORTIDES = [
   {
     id: 'patufet',
     titol: 'Presentació de la restauració del cabeçut «El Patufet»',
-    tipus: 'Presentació',
+    tipus: 'Acte',
     dia: '2026-08-22',
     data: "22 d'agost",
     hora: '19:00',
@@ -110,7 +110,7 @@ export const SORTIDES = [
   {
     id: 'entrada-grallers',
     titol: 'Entrada de Grallers',
-    tipus: 'Entrada',
+    tipus: 'Acte',
     dia: '2026-08-23',
     data: "23 d'agost",
     hora: '12:00',
@@ -813,7 +813,7 @@ export const SORTIDES = [
   {
     id: 'sortida-ofici',
     titol: 'Sortida d’Ofici',
-    tipus: 'Sortida',
+    tipus: 'Acte',
     dia: '2026-08-24',
     data: "24 d'agost",
     hora: '12:00',
@@ -987,7 +987,7 @@ export const SORTIDES = [
     ],
     tramCalma: {
       tram: 'Carrer de Sant Gaudenci, amb inici a la meitat del carrer Sant Bartomeu i final passada la cruïlla amb carrer Sant Francesc.',
-      nota: 'Hi haurà una persona de la Comissió donant l’ordre per començar el tram en calma. Consignes per colla a l’Annex II.',
+      nota: 'Més informació a la secció Calma.',
     },
     protocolPluja:
       'En cas de pluja, previsió de pluja o de qualsevol emergència que pugui afectar el desenvolupament de la processó, es convocarà una reunió entre la Comissió i els Caps de Colla a les 18.45 h a l’Auditori del Miramar per debatre la situació, ja que mitja hora abans de la Processó, la pròpia Comissió, l’Ajuntament i la Parròquia hauran de prendre una decisió conjunta i que serà inapel·lable. El protocol contempla la possibilitat de modificar els horaris i recorreguts en funció de la situació. Si plou un cop iniciada la cercavila, la Comissió prendrà les decisions oportunes i ho comunicarà als caps de colla i als voluntaris dels balls.',

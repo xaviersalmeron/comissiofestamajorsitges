@@ -26,10 +26,7 @@ const seguretatDeSortida = (id) => SEGURETAT_PER_ACTE[id] ?? null
 const TONS_TIPUS = {
   Processó: 'vermell',
   Cercavila: 'blau',
-  Sortida: 'blau',
-  Entrada: 'sorra',
-  Presentació: 'sorra',
-  Actuació: 'slate',
+  Actuació: 'sorra',
   Acte: 'slate',
 }
 
@@ -102,9 +99,6 @@ function BlocAcompanyament({ parelles, destacats }) {
           )
         })}
       </ul>
-      <p className="mt-2 text-xs text-slate-500 italic">
-        Quadre facilitat per la Comissió, a banda del document de consignes.
-      </p>
     </section>
   )
 }
