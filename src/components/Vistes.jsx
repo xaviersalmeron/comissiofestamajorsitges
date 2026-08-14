@@ -1,5 +1,6 @@
+import { useId, useState } from 'react'
 import Planol from './Planol.jsx'
-import { CapcaleraVista, Etiqueta } from './ui.jsx'
+import { Boto, CapcaleraVista, Etiqueta } from './ui.jsx'
 import { LlistaPunts } from './SortidaTargeta.jsx'
 import {
   ICONA_CATEGORIA,
@@ -8,6 +9,7 @@ import {
   IcCalma,
   IcFletxa,
   IcInfo,
+  IcLlista,
   IcMapa,
   IcMusica,
 } from './Icones.jsx'
@@ -29,7 +31,80 @@ const ICONES_BLOC = {
   banda: IcMusica,
 }
 
+/** Un bloc de consignes generals, plegable com les targetes de sortida. */
+function BlocConsigna({ bloc, obert, onToggle, onFiltraElement }) {
+  const idPanell = useId()
+  const Icona = ICONES_BLOC[bloc.icona] ?? IcInfo
+  const total = bloc.punts.length + (bloc.subllistes ?? []).reduce((n, s) => n + s.punts.length, 0)
+
+  return (
+    <section
+      className={`anim-puja overflow-hidden rounded-3xl border bg-white transition-all duration-300 ${
+        obert
+          ? 'border-fm-blau-200 shadow-lg shadow-fm-blau-900/5'
+          : 'border-slate-200 shadow-sm hover:border-slate-300 hover:shadow-md'
+      }`}
+    >
+      <button
+        type="button"
+        onClick={onToggle}
+        aria-expanded={obert}
+        aria-controls={idPanell}
+        className="flex w-full items-center gap-3.5 p-5 text-left sm:p-6"
+      >
+        <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-fm-blau-600 text-white">
+          <Icona />
+        </span>
+        <span className="min-w-0 flex-1">
+          <span className="block text-lg font-bold tracking-tight text-slate-900">{bloc.titol}</span>
+          <span className="mt-0.5 block text-xs text-slate-500">
+            {total} {total === 1 ? 'consigna' : 'consignes'}
+          </span>
+        </span>
+        <span
+          className={`grid h-9 w-9 shrink-0 place-items-center rounded-full transition-all duration-300 ${
+            obert ? 'rotate-90 bg-fm-blau-600 text-white' : 'bg-slate-100 text-slate-500'
+          }`}
+        >
+          <IcFletxa />
+        </span>
+      </button>
+
+      {obert && (
+        <div id={idPanell} className="anim-entrada border-t border-slate-100 p-5 sm:p-6">
+          {bloc.elements.length > 0 && (
+            <div className="mb-4 flex flex-wrap gap-1.5">
+              {bloc.elements.map((id) => (
+                <button
+                  key={id}
+                  type="button"
+                  onClick={() => onFiltraElement(id)}
+                  className="rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 ring-1 ring-slate-200 ring-inset transition-colors hover:bg-fm-blau-50 hover:text-fm-blau-700 hover:ring-fm-blau-300"
+                >
+                  {nomCurtElement(id)}
+                </button>
+              ))}
+            </div>
+          )}
+
+          <LlistaPunts punts={bloc.punts} />
+
+          {bloc.subllistes?.map((sub) => (
+            <div key={sub.titol} className="mt-4 rounded-2xl bg-slate-50 p-4">
+              <h4 className="mb-2.5 text-sm font-bold text-slate-800">{sub.titol}</h4>
+              <LlistaPunts punts={sub.punts} />
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}
+
 export function VistaGenerals({ onFiltraElement }) {
+  const [obertes, setObertes] = useState([])
+  const totObert = obertes.length >= CONSIGNES_GENERALS.length
+
   return (
     <div className="anim-entrada">
       <CapcaleraVista
@@ -37,47 +112,30 @@ export function VistaGenerals({ onFiltraElement }) {
         descripcio="Balls populars, imatgeria festiva, acompanyaments musicals i banda. Aquestes consignes s’apliquen a totes les sortides de la Festa Major."
       />
 
+      <div className="mb-4">
+        <Boto
+          variant="suau"
+          onClick={() => setObertes(totObert ? [] : CONSIGNES_GENERALS.map((b) => b.id))}
+        >
+          <IcLlista className="h-4 w-4" />
+          {totObert ? 'Plega-ho tot' : 'Desplega-ho tot'}
+        </Boto>
+      </div>
+
       <div className="space-y-4">
-        {CONSIGNES_GENERALS.map((bloc) => {
-          const Icona = ICONES_BLOC[bloc.icona] ?? IcInfo
-          return (
-            <section
-              key={bloc.id}
-              className="anim-puja rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6"
-            >
-              <header className="mb-4 flex items-center gap-3">
-                <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-fm-blau-600 text-white">
-                  <Icona />
-                </span>
-                <h3 className="text-lg font-bold tracking-tight text-slate-900">{bloc.titol}</h3>
-              </header>
-
-              {bloc.elements.length > 0 && (
-                <div className="mb-4 flex flex-wrap gap-1.5">
-                  {bloc.elements.map((id) => (
-                    <button
-                      key={id}
-                      type="button"
-                      onClick={() => onFiltraElement(id)}
-                      className="rounded-lg bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600 ring-1 ring-slate-200 ring-inset transition-colors hover:bg-fm-blau-50 hover:text-fm-blau-700 hover:ring-fm-blau-300"
-                    >
-                      {nomCurtElement(id)}
-                    </button>
-                  ))}
-                </div>
-              )}
-
-              <LlistaPunts punts={bloc.punts} />
-
-              {bloc.subllistes?.map((sub) => (
-                <div key={sub.titol} className="mt-4 rounded-2xl bg-slate-50 p-4">
-                  <h4 className="mb-2.5 text-sm font-bold text-slate-800">{sub.titol}</h4>
-                  <LlistaPunts punts={sub.punts} />
-                </div>
-              ))}
-            </section>
-          )
-        })}
+        {CONSIGNES_GENERALS.map((bloc) => (
+          <BlocConsigna
+            key={bloc.id}
+            bloc={bloc}
+            obert={obertes.includes(bloc.id)}
+            onToggle={() =>
+              setObertes((prev) =>
+                prev.includes(bloc.id) ? prev.filter((id) => id !== bloc.id) : [...prev, bloc.id],
+              )
+            }
+            onFiltraElement={onFiltraElement}
+          />
+        ))}
       </div>
     </div>
   )
