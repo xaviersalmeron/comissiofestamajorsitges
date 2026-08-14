@@ -91,8 +91,8 @@ sanitari** i ho indica explícitament, de manera que mai no quedi mut; l'Entrada
 coberta pel dispositiu de la Processó de Sant Bartomeu. L'únic acte sense cap cobertura documentada
 —la Presentació del cabeçut «El Patufet»— mostra l'estat buit amb la indicació de trucar al 112.
 
-L'Annex I es manté com a vista pròpia perquè hi consten els totals per acte i el protocol de trucada
-a la Creu Roja.
+Els totals per acte de l'Annex I i el protocol de trucada es consulten des del calaix de seguretat i
+emergències.
 
 ## Acompanyament musical dels balls
 
