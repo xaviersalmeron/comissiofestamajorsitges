@@ -45,7 +45,7 @@ src/
     BarraFiltres.jsx   cerca lliure + filtre per dia i per element festiu
     SortidaTargeta.jsx targeta d'una sortida amb els quatre subapartats
     PanelRapid.jsx     calaixos d'emergències, punts d'aigua i contactes
-    Vistes.jsx         consignes generals, recorreguts i tram en calma
+    Vistes.jsx         consignes generals, recorreguts, tram en calma i protocol
     Planol.jsx         plànol amb ampliació a pantalla completa
     Icones.jsx         icones SVG inline
     ui.jsx             primitives compartides i estats buits
@@ -69,9 +69,9 @@ A banda de les consignes, l'app inclou el **Protocol de la Festa Major** (actual
 Consell del Patrimoni Festiu), amb la mateixa navegació del seu sumari: vuit seccions A–H, cadascuna
 amb els seus apartats numerats, i un enllaç final als documents annexos publicats a la web oficial.
 
-El sumari de la secció F anuncia 23 apartats però el cos del document només en desenvolupa 21: «20.3
-El concert ball de sant Lli» i «21. El ball per a la gent gran» hi consten sense text. L'app els manté
-a la navegació, per fidelitat al sumari, indicant que el document no els desenvolupa.
+El sumari de la secció F anuncia 23 apartats però el cos del document només en desenvolupa 22: «21. El
+ball per a la gent gran» i el subapartat «20.3 El concert ball de sant Lli» hi consten sense text.
+L'app els manté a la navegació, per fidelitat al sumari, indicant que el document no els desenvolupa.
 
 L'Annex I (dispositiu sanitari) no té pestanya pròpia: el seu contingut —la llegenda dels recursos i
 el desplegament de Creu Roja de cada acte— viu dins del calaix de seguretat i emergències, que és on
@@ -126,9 +126,9 @@ quals encara no s'han indicat els integrants surten marcats com a «integrants p
   sortida de cada acte.
 - **Accés directe des de la capçalera.** Tres botons permanents obren calaixos laterals:
   - **Punts d'aigua** — els 34 punts de la Festa agrupats per sortida.
-  - **Contactes** — els 25 telèfons de les acreditacions, com a enllaços `tel:`, en l'ordre dels
-    PDF: Comissió, Regidoria de Tradicions i Festes, Policia Local, Emergències, dispositiu sanitari
-    i Departament de Premsa.
+  - **Contactes** — els telèfons de les acreditacions, com a enllaços `tel:`, en l'ordre dels PDF:
+    Comissió (només el President), Regidoria de Tradicions i Festes, Policia Local, Emergències,
+    dispositiu sanitari i Departament de Premsa.
   - **Seguretat i emergències** — el 112, el protocol d'actuació, la llegenda dels recursos i el
     desplegament de Policia, Seguretat, Creu Roja i Bombers de tots els actes, amb els punts
     habilitats per a persones usuàries de cadira de rodes.
