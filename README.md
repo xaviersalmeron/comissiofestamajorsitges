@@ -34,7 +34,7 @@ src/
     consignesGenerals.js   bloc 1 de l'índex
     sortides.js            bloc 2: les 12 sortides del seguici
     seguretat.js           quadre de seguretat de cada acte (4 cossos)
-    acompanyamentMusical.js  quina colla de gralles acompanya cada ball
+    acompanyamentMusical.js  colla, grup i integrants que acompanyen cada ball
     contactes.js           telèfons de les acreditacions (organització i premsa)
     protocol.js            Protocol de la Festa Major (actualització 2023)
     dispositiuSanitari.js  annex I
@@ -68,6 +68,8 @@ L'app segueix l'ordre de l'índex del document:
 A banda de les consignes, l'app inclou el **Protocol de la Festa Major** (actualització 2023 del
 Consell del Patrimoni Festiu), amb la mateixa navegació del seu sumari: vuit seccions A–H, cadascuna
 amb els seus apartats numerats, i un enllaç final als documents annexos publicats a la web oficial.
+La secció A del sumari, que només descriu els canvis d'aquesta versió respecte de l'anterior, no s'hi
+inclou.
 
 El sumari de la secció F anuncia 23 apartats però el cos del document només en desenvolupa 22: «21. El
 ball per a la gent gran» i el subapartat «20.3 El concert ball de sant Lli» hi consten sense text.
@@ -109,13 +111,19 @@ emergències.
 ## Acompanyament musical dels balls
 
 A banda del document de consignes, la Comissió facilita un quadre que assigna a cada ball la colla
-de grallers o sacaires que l'acompanya. S'aplica a tots els actes tradicionals **excepte la
-presentació del cabeçut «El Patufet»**, i a l'app surt dins de cada acte, filtrat als balls que hi
-participen i marcat com a font externa al document.
+de grallers o sacaires que l'acompanya, el grup concret dins la colla i els seus integrants amb
+l'instrument que toquen (font: «Llistat músics 2026»; només gralles i sacaires). S'aplica a tots els
+actes tradicionals **excepte la presentació del cabeçut «El Patufet»**, i a l'app surt dins de cada
+acte, filtrat als balls que hi participen. Cada fila es desplega amb els músics agrupats per
+instrument.
+
+Hi consten 63 músics amb nom. Els tres grups que el llistat encara no té assignats —Bon Vent
+(Cercolets), La Sitja (Bastons Vella) i l'acompanyament dels Castells— mostren la plantilla prevista
+en comptes dels noms.
 
 Com que el quadre lliga colles i balls, el filtre per element també l'utilitza: seleccionar l'Escola
-de Grallers de Sitges mostra els 11 actes on toca, no només l'Entrada de Grallers. Els balls dels
-quals encara no s'han indicat els integrants surten marcats com a «integrants pendents».
+de Grallers de Sitges mostra els 11 actes on toca, no només l'Entrada de Grallers. Els noms dels
+músics també són cercables des de la barra de cerca.
 
 ## Funcionalitats
 

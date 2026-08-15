@@ -9,6 +9,8 @@ import {
   BALLS_PER_COLLA,
   acompanyamentDeSortida,
   collaTocaA,
+  perInstrument,
+  TOTAL_MUSICS,
 } from './acompanyamentMusical.js'
 import { CONTACTES, TOTAL_CONTACTES, telHref } from './contactes.js'
 
@@ -33,6 +35,8 @@ export {
   BALLS_PER_COLLA,
   acompanyamentDeSortida,
   collaTocaA,
+  perInstrument,
+  TOTAL_MUSICS,
   CONTACTES,
   TOTAL_CONTACTES,
   telHref,
@@ -115,7 +119,12 @@ const textDeSortida = (s) =>
     ]),
     s.voluntariat?.nota ?? '',
     ...(s.participantsExtra ?? []).flatMap((p) => [nomElement(p.element), p.nota]),
-    ...acompanyamentDeSortida(s).flatMap((a) => [nomElement(a.ball), nomElement(a.colla)]),
+    ...acompanyamentDeSortida(s).flatMap((a) => [
+      nomElement(a.ball),
+      nomElement(a.colla),
+      a.grup ?? '',
+      ...a.integrants.map((i) => i.nom),
+    ]),
     ...COSSOS.flatMap((c) => [
       SEGURETAT_PER_ACTE[s.id]?.[c.id]?.length ? c.nom : '',
       ...(SEGURETAT_PER_ACTE[s.id]?.[c.id] ?? []),

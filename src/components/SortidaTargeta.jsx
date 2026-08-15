@@ -1,4 +1,4 @@
-import { useId } from 'react'
+import { useId, useState } from 'react'
 import Planol from './Planol.jsx'
 import { BlocSubapartat, Etiqueta, XipPersona } from './ui.jsx'
 import {
@@ -19,7 +19,7 @@ import {
 import { dispositiuDeSortida } from '../data/dispositiuSanitari.js'
 import { comptaSeguretat, cossosAmbContingut, SEGURETAT_PER_ACTE } from '../data/seguretat.js'
 import { ELEMENTS_PER_ID, nomElement } from '../data/elements.js'
-import { acompanyamentDeSortida } from '../data/acompanyamentMusical.js'
+import { acompanyamentDeSortida, perInstrument } from '../data/acompanyamentMusical.js'
 
 const seguretatDeSortida = (id) => SEGURETAT_PER_ACTE[id] ?? null
 
@@ -67,6 +67,71 @@ function OrdreSortida({ ordre, destacats, disposicio }) {
   )
 }
 
+/** Una parella ball → colla, que es desplega amb els integrants del grup. */
+function FilaAcompanyament({ a, destacat }) {
+  const [obert, setObert] = useState(false)
+  const teIntegrants = a.integrants.length > 0
+
+  return (
+    <li
+      className={`overflow-hidden rounded-lg transition-colors duration-200 ${
+        destacat ? 'bg-fm-vermell-50 ring-1 ring-fm-vermell-200 ring-inset' : 'bg-slate-50'
+      }`}
+    >
+      <button
+        type="button"
+        onClick={() => teIntegrants && setObert((v) => !v)}
+        aria-expanded={teIntegrants ? obert : undefined}
+        disabled={!teIntegrants}
+        className={`flex w-full items-center justify-between gap-2 px-3 py-2 text-left text-xs ${
+          teIntegrants ? 'cursor-pointer' : 'cursor-default'
+        }`}
+      >
+        <span className="min-w-0 flex-1 text-slate-600">{nomElement(a.ball)}</span>
+        <span className="shrink-0 text-right font-semibold text-fm-blau-800">
+          {nomElement(a.colla)}
+          {a.grup && <span className="font-normal text-slate-400"> · {a.grup}</span>}
+          <span className="block text-[10px] font-normal text-slate-400 italic">
+            {teIntegrants
+              ? `${a.integrants.length} músics`
+              : (a.plantilla ?? 'integrants pendents')}
+          </span>
+        </span>
+        {teIntegrants && (
+          <IcFletxa
+            className={`h-3.5 w-3.5 shrink-0 text-slate-400 transition-transform duration-300 ${
+              obert ? 'rotate-90' : ''
+            }`}
+          />
+        )}
+      </button>
+
+      {obert && (
+        <div className="anim-entrada space-y-2 border-t border-white/70 px-3 py-2.5">
+          {perInstrument(a.integrants).map((grup) => (
+            <div key={grup.instrument}>
+              <p className="mb-1 text-[10px] font-bold tracking-wider text-slate-400 uppercase">
+                {grup.instrument}
+              </p>
+              <ul className="flex flex-wrap gap-1.5">
+                {grup.membres.map((m) => (
+                  <li
+                    key={m.nom}
+                    className="rounded-md bg-white px-2 py-1 text-xs text-slate-700 ring-1 ring-slate-200 ring-inset"
+                  >
+                    {m.nom}
+                    {m.titular && <span className="ml-1 text-[10px] text-slate-400">titular</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      )}
+    </li>
+  )
+}
+
 /** Quadre d'acompanyament musical: quina colla toca per a cada ball. */
 function BlocAcompanyament({ parelles, destacats }) {
   return (
@@ -75,29 +140,13 @@ function BlocAcompanyament({ parelles, destacats }) {
         <IcMusica className="h-4 w-4 text-fm-blau-600" /> Acompanyament musical dels balls
       </h4>
       <ul className="grid gap-1.5 sm:grid-cols-2">
-        {parelles.map((a) => {
-          const destacat = destacats.includes(a.ball) || destacats.includes(a.colla)
-          return (
-            <li
-              key={a.ball}
-              className={`flex items-center justify-between gap-2 rounded-lg px-3 py-2 text-xs transition-colors duration-200 ${
-                destacat
-                  ? 'bg-fm-vermell-50 ring-1 ring-fm-vermell-200 ring-inset'
-                  : 'bg-slate-50'
-              }`}
-            >
-              <span className="text-slate-600">{nomElement(a.ball)}</span>
-              <span className="shrink-0 text-right font-semibold text-fm-blau-800">
-                {nomElement(a.colla)}
-                {a.integrantsPendents && (
-                  <span className="block text-[10px] font-normal text-slate-400 italic">
-                    integrants pendents
-                  </span>
-                )}
-              </span>
-            </li>
-          )
-        })}
+        {parelles.map((a) => (
+          <FilaAcompanyament
+            key={a.ball}
+            a={a}
+            destacat={destacats.includes(a.ball) || destacats.includes(a.colla)}
+          />
+        ))}
       </ul>
     </section>
   )
