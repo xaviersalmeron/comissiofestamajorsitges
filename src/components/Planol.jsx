@@ -1,9 +1,16 @@
 import { useEffect, useState } from 'react'
+import { createPortal } from 'react-dom'
 import { IcCreu, IcMapa } from './Icones.jsx'
 
 /**
  * Plànol amb ampliació a pantalla completa. Els plànols del document són
  * densos i, en mòbil, cal poder-los obrir a mida completa.
+ *
+ * L'ampliació es dibuixa amb un portal a `document.body` i no allà on viu el
+ * component: les targetes de sortida porten animacions d'entrada que deixen un
+ * `transform` de matriu identitat, i això ja crea bloc contenidor per a
+ * `position: fixed`. Sense el portal, l'overlay quedava confinat dins la
+ * targeta i el botó de tancar acabava fora de la pantalla.
  */
 export default function Planol({ src, titol }) {
   const [obert, setObert] = useState(false)
@@ -43,33 +50,43 @@ export default function Planol({ src, titol }) {
         </figcaption>
       </figure>
 
-      {obert && (
-        <div
-          className="anim-entrada fixed inset-0 z-50 flex flex-col bg-slate-900/90 p-3 backdrop-blur-sm sm:p-6"
-          role="dialog"
-          aria-modal="true"
-          aria-label={titol}
-          onClick={() => setObert(false)}
-        >
-          <div className="flex items-center justify-between gap-4 pb-3 text-white">
-            <p className="text-sm font-semibold">{titol}</p>
-            <button
-              type="button"
-              onClick={() => setObert(false)}
-              className="grid h-9 w-9 place-items-center rounded-full bg-white/10 transition-colors hover:bg-white/20"
-              aria-label="Tanca el plànol"
-            >
-              <IcCreu />
-            </button>
-          </div>
-          <img
-            src={src}
-            alt={titol}
-            className="min-h-0 flex-1 rounded-xl bg-white object-contain"
-            onClick={(e) => e.stopPropagation()}
-          />
-        </div>
-      )}
+      {obert &&
+        createPortal(
+          <div
+            className="anim-entrada fixed inset-0 z-50 flex flex-col bg-slate-900/95 backdrop-blur-sm"
+            role="dialog"
+            aria-modal="true"
+            aria-label={titol}
+            // Tocar qualsevol punt tanca: en mòbil el gest instintiu és tocar
+            // la imatge, no buscar la creu.
+            onClick={() => setObert(false)}
+            style={{
+              paddingTop: 'max(0.75rem, env(safe-area-inset-top))',
+              paddingBottom: 'max(0.75rem, env(safe-area-inset-bottom))',
+              paddingLeft: 'max(0.75rem, env(safe-area-inset-left))',
+              paddingRight: 'max(0.75rem, env(safe-area-inset-right))',
+            }}
+          >
+            <div className="flex shrink-0 items-center justify-between gap-3 pb-3 text-white">
+              <p className="min-w-0 flex-1 text-sm font-semibold">{titol}</p>
+              <button
+                type="button"
+                onClick={() => setObert(false)}
+                className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-white/15 transition-colors hover:bg-white/25 active:scale-95"
+                aria-label="Tanca el plànol"
+              >
+                <IcCreu className="h-6 w-6" />
+              </button>
+            </div>
+
+            <img src={src} alt={titol} className="min-h-0 flex-1 rounded-xl bg-white object-contain" />
+
+            <p className="shrink-0 pt-3 text-center text-xs text-white/70">
+              Toca la pantalla per tancar
+            </p>
+          </div>,
+          document.body,
+        )}
     </>
   )
 }

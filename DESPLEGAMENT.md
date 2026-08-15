@@ -30,8 +30,9 @@ https://xaviersalmeron.github.io/comissiofestamajorsitges/
 ### Sobre la privacitat d'aquesta URL
 
 GitHub Pages en un compte gratuït **només funciona amb el repositori públic, i la URL no té cap
-control d'accés**: qualsevol persona que la tingui hi entra. L'app conté telèfons mòbils i noms de
-membres de la Comissió, del voluntariat, de la Creu Roja i del Departament de Premsa.
+control d'accés**: qualsevol persona que la tingui hi entra. De la Comissió només s'hi publica el
+telèfon del President, però l'app conté els noms del voluntariat i els telèfons de la Regidoria, la
+Creu Roja i el Departament de Premsa.
 
 Per limitar-ho s'hi ha afegit `robots.txt` amb `Disallow: /` i una etiqueta
 `<meta name="robots" content="noindex, nofollow">`. Això evita que la pàgina surti als cercadors,
