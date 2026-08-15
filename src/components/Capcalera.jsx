@@ -1,11 +1,21 @@
 import { META } from '../data/index.js'
-import { IcAigua, IcCalma, IcEmergencia, IcLlista, IcMapa, IcInfo, IcTelefon } from './Icones.jsx'
+import {
+  IcAigua,
+  IcCalma,
+  IcEmergencia,
+  IcLlista,
+  IcMapa,
+  IcInfo,
+  IcProtocol,
+  IcTelefon,
+} from './Icones.jsx'
 
 export const VISTES = [
   { id: 'sortides', nom: 'Sortides', curt: 'Sortides', icona: IcLlista },
   { id: 'generals', nom: 'Consignes generals', curt: 'Generals', icona: IcInfo },
   { id: 'recorreguts', nom: 'Recorreguts', curt: 'Recorreguts', icona: IcMapa },
   { id: 'calma', nom: 'Tram en Calma', curt: 'Calma', icona: IcCalma },
+  { id: 'protocol', nom: 'Protocol', curt: 'Protocol', icona: IcProtocol },
 ]
 
 /** Marca gràfica del logotip: la retícula de cercles vermells, blaus i sorra. */

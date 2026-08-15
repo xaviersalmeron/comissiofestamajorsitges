@@ -157,6 +157,21 @@ export const IcGegant = (p) => (
   </Svg>
 )
 
+export const IcProtocol = (p) => (
+  <Svg {...p}>
+    <path d="M6.6 3.4h7.5l4.3 4.3v12.9H6.6a1.5 1.5 0 0 1-1.5-1.5V4.9a1.5 1.5 0 0 1 1.5-1.5Z" />
+    <path d="M14.1 3.4v4.3h4.3" />
+    <path d="M8.6 12.4h6.8M8.6 16.2h4.7" />
+  </Svg>
+)
+
+export const IcEnllac = (p) => (
+  <Svg {...p}>
+    <path d="M10.6 13.4a3.6 3.6 0 0 0 5.4.4l2.2-2.2a3.6 3.6 0 0 0-5.1-5.1l-1.2 1.3" />
+    <path d="M13.4 10.6a3.6 3.6 0 0 0-5.4-.4l-2.2 2.2a3.6 3.6 0 0 0 5.1 5.1l1.2-1.3" />
+  </Svg>
+)
+
 export const IcPolicia = (p) => (
   <Svg {...p}>
     <path d="M12 2.9 5.2 5.4v5.5c0 4 2.7 7.6 6.8 8.6 4.1-1 6.8-4.6 6.8-8.6V5.4L12 2.9Z" />

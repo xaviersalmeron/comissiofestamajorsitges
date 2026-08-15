@@ -36,6 +36,7 @@ src/
     seguretat.js           quadre de seguretat de cada acte (4 cossos)
     acompanyamentMusical.js  quina colla de gralles acompanya cada ball
     contactes.js           telèfons de les acreditacions (organització i premsa)
+    protocol.js            Protocol de la Festa Major (actualització 2023)
     dispositiuSanitari.js  annex I
     tramEnCalma.js         annex II
     index.js               selectors derivats: cerca, filtres i agregats
@@ -63,6 +64,14 @@ L'app segueix l'ordre de l'índex del document:
 2. **Consignes detallades per a cada sortida** — les 12 sortides, del 22 al 29 d'agost.
 3. **Recorreguts** — plànol general i itinerari escrit de cada sortida.
 4. **Annex II · Tram en Calma**.
+
+A banda de les consignes, l'app inclou el **Protocol de la Festa Major** (actualització 2023 del
+Consell del Patrimoni Festiu), amb la mateixa navegació del seu sumari: vuit seccions A–H, cadascuna
+amb els seus apartats numerats, i un enllaç final als documents annexos publicats a la web oficial.
+
+El sumari de la secció F anuncia 23 apartats però el cos del document només en desenvolupa 21: «20.3
+El concert ball de sant Lli» i «21. El ball per a la gent gran» hi consten sense text. L'app els manté
+a la navegació, per fidelitat al sumari, indicant que el document no els desenvolupa.
 
 L'Annex I (dispositiu sanitari) no té pestanya pròpia: el seu contingut —la llegenda dels recursos i
 el desplegament de Creu Roja de cada acte— viu dins del calaix de seguretat i emergències, que és on
