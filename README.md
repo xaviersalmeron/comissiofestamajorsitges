@@ -66,10 +66,9 @@ L'app segueix l'ordre de l'índex del document:
 4. **Annex II · Tram en Calma**.
 
 A banda de les consignes, l'app inclou el **Protocol de la Festa Major** (actualització 2023 del
-Consell del Patrimoni Festiu), amb la mateixa navegació del seu sumari: vuit seccions A–H, cadascuna
+Consell del Patrimoni Festiu), amb la mateixa navegació del seu sumari: les seccions B–H, cadascuna
 amb els seus apartats numerats, i un enllaç final als documents annexos publicats a la web oficial.
-La secció A del sumari, que només descriu els canvis d'aquesta versió respecte de l'anterior, no s'hi
-inclou.
+La secció A, que només descriu els canvis d'aquesta versió respecte de l'anterior, no s'hi inclou.
 
 El sumari de la secció F anuncia 23 apartats però el cos del document només en desenvolupa 22: «21. El
 ball per a la gent gran» i el subapartat «20.3 El concert ball de sant Lli» hi consten sense text.
