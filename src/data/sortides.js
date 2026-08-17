@@ -191,7 +191,7 @@ export const SORTIDES = [
             { lloc: 'Cap de la Vila amb carrer Jesús', persones: ['Maria Lluïsa Saltó', 'Marina Redondo'] },
             {
               lloc: 'Cap de la Vila amb carrer Àngel Vidal',
-              persones: ['Cristina Gràcia', 'Andrés Sanz'],
+              persones: ['Cristina Gràcia', 'Maria Carreras'],
             },
           ],
         },
@@ -564,7 +564,7 @@ export const SORTIDES = [
       hiHa: true,
       grups: [
         {
-          rol: '10 voluntaris acompanyant el seguici',
+          rol: '8 voluntaris acompanyant el seguici',
           punts: [
             { lloc: 'Ball de Cabeçuts', persones: ['Cristina Gràcia'] },
             {
@@ -577,7 +577,11 @@ export const SORTIDES = [
               persones: [],
               pendent: '2 voluntaris/es per cercavila (pendent d’assignar)',
             },
-            { lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella', persones: ['Maria Carreras'] },
+            {
+              lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella',
+              persones: [],
+              pendent: '1 voluntari per cercavila (pendent d’assignar)',
+            },
             {
               lloc: 'Cercolets, Pastorets, Panderetes i Cintes',
               persones: [],
@@ -591,7 +595,7 @@ export const SORTIDES = [
           punts: [
             {
               lloc: 'Corraló de Can Pau Xic',
-              persones: ['Jep Estrada', 'Jordi Sabaté', 'Mirta Zubeldia'],
+              persones: ['Jep Estrada', 'Jordi Sabaté'],
             },
             {
               lloc: 'C/ Jesús amb C/ Francesc Gumà',
@@ -1110,16 +1114,16 @@ export const SORTIDES = [
         {
           rol: '10 voluntaris acompanyant el seguici',
           punts: [
-            { lloc: 'Ball de Cabeçuts', persones: ['Biel Domènech', 'Pol Meseguer'] },
+            { lloc: 'Ball de Cabeçuts', persones: ['Maria Carreras'] },
             {
               lloc: 'Colles de Foc',
               persones: ['Jordi Salmerón', 'Enric Massó', 'Joan Mas', 'Jesus Eroles', 'Raimon Miró'],
             },
             {
               lloc: 'Ball de Bastons Colla Jove; Colla Noies; i Gitanes Vila',
-              persones: ['Maria Carreras'],
+              persones: ['Pol Meseguer'],
             },
-            { lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella', persones: ['Andrés Sanz'] },
+            { lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella', persones: ['Biel Domènech'] },
             {
               lloc: 'Cercolets, Pastorets, Panderetes i Cintes',
               persones: ['Judit Virgili', 'Maria Boy'],
@@ -1132,7 +1136,7 @@ export const SORTIDES = [
           punts: [
             {
               lloc: 'C/ Jesús amb C/ Francesc Gumà',
-              persones: ['Jep Estrada', 'Jordi Sabaté', 'Mirta Zubeldia'],
+              persones: ['Jep Estrada', 'Jordi Sabaté'],
             },
             {
               lloc: 'Passeig de la Ribera amb carrer Sant Pere',
