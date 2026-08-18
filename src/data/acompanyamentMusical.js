@@ -147,10 +147,25 @@ export const ACOMPANYAMENT_MUSICAL = {
   },
 
   // ── Colla de Grallers La Sitja ──
+  // Llistat facilitat per la Comissió (18/08/2026). Els titulars són els 5
+  // grallers i 2 timbalers que preveia la plantilla; la resta són suplents.
   'bastons-vella': {
     colla: 'grallers-la-sitja',
-    integrants: [],
-    plantilla: '5 gralles i 2 timbals',
+    integrants: [
+      g('Jordi Olaria', true),
+      g('Lluc Lopez', true),
+      g('Isidro Calvo', true),
+      g('Jesus Lopez', true),
+      g('Manel Martinez', true),
+      g('Rafael Morillas'),
+      g('Sofia Aldeco'),
+      g('Inés Polonio'),
+      g('Andrea Alcazar'),
+      g('Rafa Garcia'),
+      t('David Fernández', true),
+      t('Joan Galindo', true),
+      t('Íñigo Ferran'),
+    ],
   },
 
   // ── Castells ──

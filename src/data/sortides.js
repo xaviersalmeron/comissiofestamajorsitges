@@ -191,7 +191,7 @@ export const SORTIDES = [
             { lloc: 'Cap de la Vila amb carrer Jesús', persones: ['Maria Lluïsa Saltó', 'Marina Redondo'] },
             {
               lloc: 'Cap de la Vila amb carrer Àngel Vidal',
-              persones: ['Cristina Gràcia', 'Maria Carreras'],
+              persones: ['Janet Valls', 'Mirta Zubeldia'],
             },
           ],
         },
@@ -403,7 +403,7 @@ export const SORTIDES = [
         ],
       },
     ],
-    voluntariat: { hiHa: false, nota: 'El document no assigna voluntariat a aquest acte.' },
+    voluntariat: { hiHa: false, nota: 'No hi haurà voluntariat en aquest acte.' },
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -564,7 +564,7 @@ export const SORTIDES = [
       hiHa: true,
       grups: [
         {
-          rol: '8 voluntaris acompanyant el seguici',
+          rol: '3 voluntaris acompanyant el seguici',
           punts: [
             { lloc: 'Ball de Cabeçuts', persones: ['Cristina Gràcia'] },
             {
@@ -591,7 +591,7 @@ export const SORTIDES = [
           ],
         },
         {
-          rol: '4 voluntaris pels punts habilitats per a persones usuàries de cadira de rodes',
+          rol: '5 voluntaris pels punts habilitats per a persones usuàries de cadira de rodes',
           punts: [
             {
               lloc: 'Corraló de Can Pau Xic',
@@ -1112,9 +1112,9 @@ export const SORTIDES = [
       nota: 'Un cop arribin els voluntaris a l’Ajuntament, s’encarregaran de fer passadís perquè els balls puguin arribar fins al Baluard.',
       grups: [
         {
-          rol: '10 voluntaris acompanyant el seguici',
+          rol: '12 voluntaris acompanyant el seguici',
           punts: [
-            { lloc: 'Ball de Cabeçuts', persones: ['Maria Carreras'] },
+            { lloc: 'Ball de Cabeçuts', persones: ['Maria Carreras', 'Cristina Gràcia'] },
             {
               lloc: 'Colles de Foc',
               persones: ['Jordi Salmerón', 'Enric Massó', 'Joan Mas', 'Jesus Eroles', 'Raimon Miró'],
@@ -1132,7 +1132,7 @@ export const SORTIDES = [
           ],
         },
         {
-          rol: '4 voluntaris pels punts habilitats per a persones usuàries de cadira de rodes',
+          rol: '5 voluntaris pels punts habilitats per a persones usuàries de cadira de rodes',
           punts: [
             {
               lloc: 'C/ Jesús amb C/ Francesc Gumà',
@@ -1272,7 +1272,7 @@ export const SORTIDES = [
         ],
       },
     ],
-    voluntariat: { hiHa: false, nota: 'El document no assigna voluntariat a aquest acte.' },
+    voluntariat: { hiHa: false, nota: 'No hi haurà voluntariat en aquest acte.' },
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -1302,6 +1302,6 @@ export const SORTIDES = [
         ],
       },
     ],
-    voluntariat: { hiHa: false, nota: 'El document no assigna voluntariat a aquest acte.' },
+    voluntariat: { hiHa: false, nota: 'No hi haurà voluntariat en aquest acte.' },
   },
 ]

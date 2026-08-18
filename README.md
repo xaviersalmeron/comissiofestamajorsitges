@@ -1,7 +1,7 @@
 # Consignes · Festa Major de Sant Bartomeu 2026
 
 Aplicació web de consulta ràpida de les **Consignes de la Festa Major de Sant Bartomeu de Sitges
-2026** (versió 3.0, 14/08/2026), pensada per als organitzadors i participants de la Festa: membres
+2026** (versió 3.1, 18/08/2026), pensada per als organitzadors i participants de la Festa: membres
 de la Comissió, caps de colla, balladors, músics i voluntariat.
 
 Tot el contingut és una transcripció del document oficial de consignes. **En cas de dubte o
@@ -116,9 +116,10 @@ actes tradicionals **excepte la presentació del cabeçut «El Patufet»**, i a 
 acte, filtrat als balls que hi participen. Cada fila es desplega amb els músics agrupats per
 instrument.
 
-Hi consten 63 músics amb nom. Els tres grups que el llistat encara no té assignats —Bon Vent
-(Cercolets), La Sitja (Bastons Vella) i l'acompanyament dels Castells— mostren la plantilla prevista
-en comptes dels noms.
+Hi consten 76 músics amb nom. Els de la Colla de Grallers La Sitja (Bastons Colla Vella) els va
+facilitar la Comissió el 18/08/2026, marcant-hi els titulars; els suplents surten sense l'etiqueta.
+Els dos grups que el llistat encara no té assignats —Bon Vent (Cercolets) i l'acompanyament dels
+Castells— mostren la plantilla prevista en comptes dels noms.
 
 Com que el quadre lliga colles i balls, el filtre per element també l'utilitza: seleccionar l'Escola
 de Grallers de Sitges mostra els 11 actes on toca, no només l'Entrada de Grallers. Els noms dels
@@ -154,10 +155,15 @@ en mòbil, pestanyes en escriptori), amb transicions suaus i suport per a `prefe
 
 La versió 3.0 va corregir les incoherències de recompte que hi havia a la 2.1 (Processó Cívica de la
 Bandera i Baixada de les Escales) i l'ordre de sortida de la Sortida d'Ofici, que començava amb «Q
-Americanos». Les xifres i els noms de l'app segueixen ara el document sense cap esmena.
+Americanos». La 3.1 va actualitzar el voluntariat. Les xifres i els noms de l'app segueixen el
+document sense cap esmena.
 
-Queden tres grups de voluntariat pendents d'assignar al document (dos a la Processó Cívica de la
+Queden quatre grups de voluntariat pendents d'assignar al document (tres a la Processó Cívica de la
 Bandera i l'esmorzar de la Matinal); a l'app hi surten marcats com a «Pendent d'assignar».
+
+A la Processó Cívica de la Bandera el títol del grup diu «3 voluntaris acompanyant el seguici» però
+tot seguit hi reparteix 8 places entre sis colles, de les quals només tres tenen nom assignat. L'app
+transcriu totes dues coses tal com hi consten.
 
 La Cobla no consta a les consignes, però hi és present a la Sortida de les Dues, la Sortida d'Ofici
 i la Processó de Sant Bartomeu. Com que no desfila —toca des d'un punt fix del recorregut— es modela
