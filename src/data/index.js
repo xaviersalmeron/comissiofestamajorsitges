@@ -48,7 +48,7 @@ export const seguretatDeSortida = (id) => SEGURETAT_PER_ACTE[id] ?? null
 export const META = {
   titol: 'Consignes de la Festa Major',
   sant: 'Sant Bartomeu 2026',
-  versio: 'Versió 3.1 · 18/08/2026',
+  versio: 'Versió 3.2 · 23/08/2026',
   entitat: 'Comissió Municipal de Sant Bartomeu i Santa Tecla',
 }
 

@@ -1,7 +1,7 @@
 # Consignes · Festa Major de Sant Bartomeu 2026
 
 Aplicació web de consulta ràpida de les **Consignes de la Festa Major de Sant Bartomeu de Sitges
-2026** (versió 3.1, 18/08/2026), pensada per als organitzadors i participants de la Festa: membres
+2026** (versió 3.2, 23/08/2026), pensada per als organitzadors i participants de la Festa: membres
 de la Comissió, caps de colla, balladors, músics i voluntariat.
 
 Tot el contingut és una transcripció del document oficial de consignes. **En cas de dubte o
@@ -155,15 +155,18 @@ en mòbil, pestanyes en escriptori), amb transicions suaus i suport per a `prefe
 
 La versió 3.0 va corregir les incoherències de recompte que hi havia a la 2.1 (Processó Cívica de la
 Bandera i Baixada de les Escales) i l'ordre de sortida de la Sortida d'Ofici, que començava amb «Q
-Americanos». La 3.1 va actualitzar el voluntariat. Les xifres i els noms de l'app segueixen el
-document sense cap esmena.
+Americanos». Les versions 3.1 i 3.2 han anat actualitzant el voluntariat. Les xifres i els noms de
+l'app segueixen el document sense cap esmena.
 
-Queden quatre grups de voluntariat pendents d'assignar al document (tres a la Processó Cívica de la
-Bandera i l'esmorzar de la Matinal); a l'app hi surten marcats com a «Pendent d'assignar».
+L'únic grup de voluntariat que el document deixa pendent d'assignar és l'esmorzar de la Matinal; a
+l'app hi surt marcat com a «Pendent d'assignar».
 
-A la Processó Cívica de la Bandera el títol del grup diu «3 voluntaris acompanyant el seguici» però
-tot seguit hi reparteix 8 places entre sis colles, de les quals només tres tenen nom assignat. L'app
-transcriu totes dues coses tal com hi consten.
+Els encapçalaments dels grups de voluntariat de la versió 3.2 no sempre quadren amb les persones que
+hi consten: a la Processó Cívica de la Bandera diu «6 voluntaris acompanyant el seguici» i n'hi
+reparteix 7, i «5 voluntaris» als punts accessibles amb 6 noms; a la Processó de Sant Bartomeu diu
+«12 voluntaris acompanyant el seguici» i n'hi reparteix 13. A l'Entrada de Grallers manté «4
+voluntaris» per a un punt on ara només n'hi ha dos. L'app transcriu totes dues coses tal com hi
+consten.
 
 La Cobla no consta a les consignes, però hi és present a la Sortida de les Dues, la Sortida d'Ofici
 i la Processó de Sant Bartomeu. Com que no desfila —toca des d'un punt fix del recorregut— es modela

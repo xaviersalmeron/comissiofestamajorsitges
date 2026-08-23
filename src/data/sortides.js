@@ -188,19 +188,18 @@ export const SORTIDES = [
         {
           rol: '4 voluntaris per informar de l’acte i evitar que turistes i cotxets intentin travessar la plaça',
           punts: [
-            { lloc: 'Cap de la Vila amb carrer Jesús', persones: ['Maria Lluïsa Saltó', 'Marina Redondo'] },
             {
-              lloc: 'Cap de la Vila amb carrer Àngel Vidal',
-              persones: ['Janet Valls', 'Mirta Zubeldia'],
+              lloc: 'Cap de la Vila amb carrer Jesús i Àngel Vidal',
+              persones: ['Maria Lluïsa Saltó', 'Janet Valls'],
             },
           ],
         },
         {
-          rol: '3 voluntaris pel punt habilitat per a persones usuàries de cadira de rodes',
+          rol: '2 voluntaris pel punt habilitat per a persones usuàries de cadira de rodes',
           punts: [
             {
               lloc: 'Plaça de l’Ajuntament',
-              persones: ['Raimon Miró', 'Jonatan Martínez', 'Janet Valls'],
+              persones: ['Raimon Miró', 'Jonatan Martínez'],
             },
           ],
         },
@@ -303,7 +302,7 @@ export const SORTIDES = [
     puntsAigua: [
       { lloc: 'C/ Major amb Pl. de l’Ajuntament', detall: 'Oficina de Mediació' },
       { lloc: 'C/ Major, 47' },
-      { lloc: 'Hort de Can Falç' },
+      { lloc: 'Hort de Can Falç', detall: 'tiquets' },
       { lloc: 'Hospital' },
     ],
     comissio: [
@@ -448,6 +447,7 @@ export const SORTIDES = [
       'Els Gegants estaran col·locats a la façana de l’edifici del carrer Aragó, 25, que dona a la placeta on està el Restaurant Casa Raimundo. El Drac i l’Àliga també estaran col·locats a la plaça entre l’olivera i la façana de l’edifici del carrer Sant Honorat, 52. La resta del seguici estarà col·locat al carrer Illes Balears i entraran pel lateral del Restaurant Casa Raimundo.',
       'Tots els entremesos i balls (incloses les colles de foc) han de començar la seva cercavila amb el seu ball i les seves músiques des del domicili del President (a la placeta del Restaurant Casa Raimundo), i giraran pel carreró que dona al carrer Aragó.',
       'ATENCIÓ! Es demana no aturar ni fer cap encesa especial sempre que no s’hagi comunicat prèviament. Al pont dels Ocells s’ha de passar amb foc horitzontal. Tampoc es pot aturar la cercavila davant del Sant per tal de no entorpir ni tallar la totalitat de la processó. Les colles de foc no podran encendre davant del Sant.',
+      'IMPORTANT: hi ha un tram del carrer Emili Picó on no es podrà llançar foc. Més o menys des de la cruïlla amb Isabel Julià fins a la porta lateral de l’escola.',
       'La Banda tocarà La Processó de Sant Bartomeu un cop el Sant s’incorpori a la Processó Cívica de la Bandera a casa del Pendonista (Can Falç).',
       'Tots els balls i entremesos esperaran el Sant entre el Baluard Miquel Utrillo i el Baluard seguint la disposició del plànol.',
       'Els balls arribaran ballant fins a arribar a la seva ubicació. Els diables i bèsties hauran de fer l’última encesa al Racó de la Calma i els timbalers podran continuar tocant fins a arribar a la seva ubicació sense fer cap parada.',
@@ -564,7 +564,7 @@ export const SORTIDES = [
       hiHa: true,
       grups: [
         {
-          rol: '3 voluntaris acompanyant el seguici',
+          rol: '6 voluntaris acompanyant el seguici',
           punts: [
             { lloc: 'Ball de Cabeçuts', persones: ['Cristina Gràcia'] },
             {
@@ -573,21 +573,13 @@ export const SORTIDES = [
               nota: 'Només fins al Cap de la Vila.',
             },
             {
-              lloc: 'Ball de Bastons Colla Jove; Colla Noies; i Gitanes Vila',
-              persones: [],
-              pendent: '2 voluntaris/es per cercavila (pendent d’assignar)',
+              lloc: 'Ball de Bastons Colla Jove; Colla Noies; Colla Mitjana; i Colla Vella',
+              persones: ['María Hill Navarrete'],
             },
-            {
-              lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella',
-              persones: [],
-              pendent: '1 voluntari per cercavila (pendent d’assignar)',
-            },
-            {
-              lloc: 'Cercolets, Pastorets, Panderetes i Cintes',
-              persones: [],
-              pendent: '2 voluntaris/es per cercavila (pendent d’assignar)',
-            },
-            { lloc: 'Gitanes ABPS i Moixiganga', persones: ['Josep Maria Esteban'] },
+            { lloc: 'Ball de Gitanes de la Vila', persones: ['Marta Valero'] },
+            { lloc: 'Ball de Cercolets', persones: ['Aleix Gràcia'] },
+            { lloc: 'Ball de Pastorets, Panderetes i Cintes', persones: ['Pepi Martínez'] },
+            { lloc: 'Gitanes ABPS i Moixiganga', persones: ['Josep Maria Fernandez'] },
           ],
         },
         {
@@ -595,7 +587,7 @@ export const SORTIDES = [
           punts: [
             {
               lloc: 'Corraló de Can Pau Xic',
-              persones: ['Jep Estrada', 'Jordi Sabaté'],
+              persones: ['Jep Estrada', 'Jordi Sabaté', 'Biel Domènech'],
             },
             {
               lloc: 'C/ Jesús amb C/ Francesc Gumà',
@@ -1114,21 +1106,22 @@ export const SORTIDES = [
         {
           rol: '12 voluntaris acompanyant el seguici',
           punts: [
-            { lloc: 'Ball de Cabeçuts', persones: ['Maria Carreras', 'Cristina Gràcia'] },
+            { lloc: 'Ball de Cabeçuts', persones: ['Maria Carreras', 'Janet Valls'] },
             {
               lloc: 'Colles de Foc',
-              persones: ['Jordi Salmerón', 'Enric Massó', 'Joan Mas', 'Jesus Eroles', 'Raimon Miró'],
+              persones: ['Jordi Salmerón', 'Enric Massó', 'Joan Mas', 'Jesús Eroles', 'Raimon Miró'],
             },
             {
               lloc: 'Ball de Bastons Colla Jove; Colla Noies; i Gitanes Vila',
-              persones: ['Pol Meseguer'],
+              persones: ['Cristina Gràcia'],
             },
-            { lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella', persones: ['Biel Domènech'] },
+            { lloc: 'Ball de Bastons Colla Mitjana; i Colla Vella', persones: ['Marina Redondo'] },
+            { lloc: 'Ball de Cercolets', persones: ['Aleix Gràcia'] },
             {
-              lloc: 'Cercolets, Pastorets, Panderetes i Cintes',
+              lloc: 'Ball de Pastorets, Panderetes i Cintes',
               persones: ['Judit Virgili', 'Maria Boy'],
             },
-            { lloc: 'Gitanes ABPS i Moixiganga', persones: ['Josep Maria Esteban'] },
+            { lloc: 'Ball de Gitanes ABPS i Moixiganga', persones: ['Josep Maria Fernandez'] },
           ],
         },
         {
