@@ -46,18 +46,32 @@ però **no és un control d'accés**. Recomanacions:
 
 ## Build
 
+Hi ha **dues apps** al repositori i cadascuna es construeix per separat:
+
 ```bash
+# Sant Bartomeu (arrel del repositori)
 npm ci          # instal·la exactament les versions del package-lock.json
 npm run build   # genera dist/
+
+# Santa Tecla
+cd santa-tecla
+npm ci
+npm run build   # genera santa-tecla/dist/
 ```
 
 Requisits: **Node 20 o superior**. No calen variables d'entorn ni secrets.
 
-El resultat queda a `dist/` i pesa uns 3,5 MB, la major part imatges (els plànols del document).
+Cada `dist/` pesa uns 3,5 MB, la major part imatges (els plànols del document).
+
+El workflow de GitHub Pages fa les dues coses i copia `santa-tecla/dist` dins de `dist/santa-tecla`,
+de manera que Sant Bartomeu queda a l'arrel del lloc i Santa Tecla a `/santa-tecla/`. Les dues apps
+s'enllacen entre elles des del peu de pàgina amb rutes relatives, de manera que aquesta disposició
+s'ha de mantenir també al servidor propi.
 
 ## Allotjament al servidor propi
 
-Copiar el contingut de `dist/` a l'arrel pública del servidor. Notes:
+Copiar el contingut de `dist/` a l'arrel pública del servidor i el de `santa-tecla/dist/` a la
+subcarpeta `santa-tecla/`. Notes:
 
 - **Funciona en subcarpeta.** El `base` de Vite és relatiu (`./` a `vite.config.js`), de manera que
   l'app funciona igual a `https://exemple.cat/` que a `https://exemple.cat/consignes/`. No cal

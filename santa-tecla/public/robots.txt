@@ -1,0 +1,4 @@
+# Eina interna de la Comissió de Festa Major: conté dades de contacte
+# de persones concretes i no ha de sortir als cercadors.
+User-agent: *
+Disallow: /

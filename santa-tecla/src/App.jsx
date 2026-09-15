@@ -159,10 +159,10 @@ export default function App() {
             contradicció, preval el document oficial i el Protocol de Festa Major.
           </p>
           <a
-            href="./santa-tecla/"
+            href="../"
             className="mt-4 inline-flex items-center gap-1.5 rounded-xl bg-slate-100 px-3.5 py-2 text-xs font-semibold text-slate-600 ring-1 ring-slate-200 ring-inset transition-colors hover:bg-white hover:text-fm-blau-700"
           >
-            Consignes de Santa Tecla
+            Consignes de Sant Bartomeu
             <IcFletxa className="h-3.5 w-3.5" />
           </a>
         </footer>

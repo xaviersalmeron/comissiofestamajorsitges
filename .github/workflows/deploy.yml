@@ -27,8 +27,16 @@ jobs:
           node-version: 20
           cache: npm
 
+      # Sant Bartomeu: va a l'arrel del lloc
       - run: npm ci
       - run: npm run build
+
+      # Santa Tecla: app independent, va a /santa-tecla/
+      - run: npm ci
+        working-directory: santa-tecla
+      - run: npm run build
+        working-directory: santa-tecla
+      - run: cp -r santa-tecla/dist dist/santa-tecla
 
       # Requereix que Pages estigui activat al repositori amb Source =
       # GitHub Actions. El token del workflow no té permís per activar-lo,

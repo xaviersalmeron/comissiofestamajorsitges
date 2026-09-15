@@ -7,6 +7,16 @@ de la Comissió, caps de colla, balladors, músics i voluntariat.
 Tot el contingut és una transcripció del document oficial de consignes. **En cas de dubte o
 contradicció preval el document original i el Protocol de Festa Major.**
 
+Aquest repositori conté **dues apps independents** amb la mateixa estructura i el mateix objectiu:
+
+| App | Carpeta | URL |
+| --- | --- | --- |
+| Sant Bartomeu 2026 | arrel del repositori | `/comissiofestamajorsitges/` |
+| Santa Tecla 2026 | [`santa-tecla/`](santa-tecla/) | `/comissiofestamajorsitges/santa-tecla/` |
+
+Comparteixen els components i el disseny, però cadascuna té les seves dades i es pot actualitzar
+sense tocar l'altra. El desplegament les construeix totes dues i s'enllacen des del peu de pàgina.
+
 ## Posar-la en marxa
 
 ```bash
