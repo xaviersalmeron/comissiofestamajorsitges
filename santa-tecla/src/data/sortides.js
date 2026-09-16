@@ -396,7 +396,7 @@ export const SORTIDES = [
           {
             descripcio:
               '1 parella acompanyant el Ball de Bastons colla jove, colla noies, i Gitanes de la Vila',
-            persones: ['Irene Martínez', 'Mara Juez'],
+            persones: ['Irene Martínez', 'Marta Juez'],
             enAcabar: 'En arribar al Cap de la Vila, s’hi queden. Després van a la pl. de l’Ajuntament.',
           },
           {
@@ -890,7 +890,7 @@ export const SORTIDES = [
           {
             descripcio:
               '3 persones fixes vetllant pel transcurs de la Sortida d’Ofici i col·locant els balls al seu lloc',
-            persones: ['Aleix Ibañez', 'Marta Juez', 'Marta Argias'],
+            persones: ['Aleix Ibañez', 'Marta Juez', 'Marta Artigas'],
           },
         ],
       },

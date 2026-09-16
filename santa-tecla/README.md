@@ -92,15 +92,20 @@ i Oriol Carbonell); l'app les anomena igual, sense inventar-ne la denominació c
 
 ## Notes sobre la font
 
-Hi ha uns quants punts on l'encapçalament d'un bloc no quadra amb el que hi consta a sota. Tot està
-transcrit tal com hi és, sense esmenar-ho:
+Dos noms del document són errors, confirmats per la Comissió, i a l'app surten corregits:
 
-- **Processó Cívica.** Una assignació diu «1 parella» amb els noms d'Irene Martínez i **Mara** Juez,
-  que a la resta del document és Marta Juez. A la plaça de l'Ajuntament hi diu «12 persones» i s'hi
-  llisten 11 noms més el President, on hi consten **Gabri Gónzalez** i **Marta Lluís** (a la resta,
-  Gabri González i Maria Lluís).
-- **Sortida d'Ofici.** Un dels tres noms és **Marta Argias** (a la resta del document, Marta
-  Artigas).
+| Al document | A l'app |
+| --- | --- |
+| Mara Juez (Processó Cívica) | **Marta Juez** |
+| Marta Argias (Sortida d'Ofici) | **Marta Artigas** |
+
+És l'única esmena que es fa sobre el text original. La resta de punts on l'encapçalament d'un bloc no
+quadra amb el que hi consta a sota estan transcrits tal com hi són:
+
+- **Processó Cívica.** A la plaça de l'Ajuntament hi diu «12 persones» i s'hi llisten 11 noms més el
+  President, on hi consten **Gabri Gónzalez** i **Marta Lluís** (a la resta del document, Gabri
+  González i Maria Lluís).
+- **Sortida d'Ofici.** Hi consta **Aleix Ibañez**, sense accent (a la resta, Aleix Ibáñez).
 - **Processó de Santa Tecla.** Una assignació diu «1 parella fixa» amb tres noms. Els punts
   accessibles es descriuen com «Passeig de la Ribera (al costat de la Cobla)» a les indicacions i
   com «Passeig de la Ribera amb carrer Sant Pere» al voluntariat.
