@@ -92,29 +92,26 @@ i Oriol Carbonell); l'app les anomena igual, sense inventar-ne la denominació c
 
 ## Notes sobre la font
 
-El nom del fitxer diu «v2.1_20260915» però la portada del document diu **«Versió 2.2_16/09/2026»**;
-l'app segueix la portada.
-
 Hi ha uns quants punts on l'encapçalament d'un bloc no quadra amb el que hi consta a sota. Tot està
 transcrit tal com hi és, sense esmenar-ho:
 
-- **Processó Cívica.** Una assignació diu «1 parella fixa» amb un sol nom (Raquel Llorià), i una
-  altra diu «1 parella» amb els noms d'Irene Martínez i **Mara** Juez, que a la resta del document
-  és Marta Juez. A la plaça de l'Ajuntament hi diu «12 persones» i s'hi llisten 11 noms més el
-  President, on hi consten **Gabri Gónzalez** i **Marta Lluís** (a la resta, Gabri González i Maria
-  Lluís).
-- **Matinals.** El voluntariat de l'esmorzar diu «6 voluntaris» i n'hi dona 4 noms.
-- **Matinal Petita.** El bloc de la Comissió s'encapçala «Baluard amb C/ Fonollar (inici de la
-  cercavila)» tot i que les indicacions diuen que la cercavila comença a la plaça de l'Ajuntament.
-  L'app ho indica amb una nota al bloc.
-- **Sortida d'Ofici.** Diu «2 persones fixes» i hi llista tres noms, un dels quals és **Marta
-  Argias** (a la resta del document, Marta Artigas).
-- **Processó de Santa Tecla.** L'encapçalament diu «19 H» i les indicacions, «19.30 h puntuals des
-  del Baluard»; l'app fa servir les 19.30 h i ho anota. Una assignació diu «1 parella fixa» amb tres
-  noms. Els punts accessibles es descriuen com «Passeig de la Ribera (al costat de la Cobla)» a les
-  indicacions i com «Passeig de la Ribera amb carrer Sant Pere» al voluntariat.
+- **Processó Cívica.** Una assignació diu «1 parella» amb els noms d'Irene Martínez i **Mara** Juez,
+  que a la resta del document és Marta Juez. A la plaça de l'Ajuntament hi diu «12 persones» i s'hi
+  llisten 11 noms més el President, on hi consten **Gabri Gónzalez** i **Marta Lluís** (a la resta,
+  Gabri González i Maria Lluís).
+- **Sortida d'Ofici.** Un dels tres noms és **Marta Argias** (a la resta del document, Marta
+  Artigas).
+- **Processó de Santa Tecla.** Una assignació diu «1 parella fixa» amb tres noms. Els punts
+  accessibles es descriuen com «Passeig de la Ribera (al costat de la Cobla)» a les indicacions i
+  com «Passeig de la Ribera amb carrer Sant Pere» al voluntariat.
 - **Cercavila de Gegants.** Les quatre últimes colles de la llista (el drac de la gorra blava, Colla
   Espurna, Somnis de FM i Dragonet) no tenen cap colla de músics assignada.
+
+La versió de 16/09/2026 va corregir uns quants punts que la revisió anterior havia deixat descosits:
+la Processó Cívica diu ara «1 persona fixa (Raquel Llorià)», el voluntariat de l'esmorzar de les
+Matinals diu «4 voluntaris» —el nombre de noms que hi consten—, el bloc de la Comissió de la Matinal
+Petita s'encapçala a la plaça de l'Ajuntament, que és on comença la cercavila, la Sortida d'Ofici
+diu «3 persones fixes» i la Processó de Santa Tecla fixa l'hora a les 19 h a tot arreu.
 
 L'Entrada de la Santa no té quadre de seguretat propi. L'app hi mostra el de la Ballada final —la
 mateixa nit i al mateix lloc— i ho diu explícitament.

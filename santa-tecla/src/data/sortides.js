@@ -37,7 +37,7 @@ const MATINALS_VOLUNTARIAT = {
   nota: 'Voluntariat comú a les tres Matinals de Santa Tecla.',
   grups: [
     {
-      rol: '6 voluntaris per l’esmorzar',
+      rol: '4 voluntaris per l’esmorzar',
       punts: [
         {
           lloc: 'Fragata',
@@ -384,7 +384,7 @@ export const SORTIDES = [
             enAcabar: 'Aniran al Cap de la Vila.',
           },
           {
-            descripcio: '1 parella fixa obrint la Processó amb els Gegants de la Vila i Gegants Americanos',
+            descripcio: '1 persona fixa obrint la Processó amb els Gegants de la Vila i Gegants Americanos',
             persones: ['Raquel Llorià'],
             enAcabar: 'En arribar a l’Ajuntament, col·labora en la col·locació dels balls.',
           },
@@ -590,20 +590,14 @@ export const SORTIDES = [
               { element: 'gegants-montornes' },
               { element: 'gegants-vila-infantils' },
               { element: 'gegants-moros-mitjans' },
-            ],
-          },
-          {
-            musica: 'escola-grallers',
-            colles: [
               { element: 'jordi-jovenet' },
-              { element: 'colla-jove-ripoll' },
-              { element: 'cubanita-xalet' },
-              { element: 'pagesos-can-pei' },
             ],
           },
           {
             musica: 'escola-grallers',
             colles: [
+              { element: 'colla-jove-ripoll' },
+              { element: 'pagesos-can-pei' },
               { element: 'colla-pesigolla' },
               { element: 'giravols', nota: 'bestiari sense foc' },
               { element: 'mini-dracs' },
@@ -702,22 +696,18 @@ export const SORTIDES = [
               { element: 'gegant-bs' },
               { element: 'tiet-evaristo' },
               { element: 'cubanitos-mojito', nom: 'Cubanito Moito' },
-            ],
-          },
-          {
-            musica: 'gts-marcets',
-            colles: [
+              { element: 'cubanita-xalet' },
               { element: 'poc-a-poc' },
-              { element: 'mil-quatrecents' },
-              { element: 'colla-espurnes' },
-              { element: 'draguipatis' },
-              { element: 'ferafocs' },
-              { element: 'drac-verdet' },
             ],
           },
           {
             musica: 'escola-grallers',
             colles: [
+              { element: 'mil-quatrecents' },
+              { element: 'colla-espurnes' },
+              { element: 'draguipatis' },
+              { element: 'ferafocs' },
+              { element: 'drac-verdet' },
               { element: 'escalat-amics' },
               { element: 'drac-gorra-blava' },
               { element: 'colla-espurna' },
@@ -746,8 +736,7 @@ export const SORTIDES = [
     ],
     comissio: [
       {
-        lloc: 'Baluard amb C/ Fonollar (inici de la cercavila)',
-        nota: 'El document encapçala així aquest bloc, tot i que la cercavila comença a la plaça de l’Ajuntament.',
+        lloc: 'Plaça de l’Ajuntament (inici de la cercavila)',
         assignacions: [
           {
             descripcio: '1 persona fixa donant la sortida i controlant els músics',
@@ -900,7 +889,7 @@ export const SORTIDES = [
         assignacions: [
           {
             descripcio:
-              '2 persones fixes vetllant pel transcurs de la Sortida d’Ofici i col·locant els balls al seu lloc',
+              '3 persones fixes vetllant pel transcurs de la Sortida d’Ofici i col·locant els balls al seu lloc',
             persones: ['Aleix Ibañez', 'Marta Juez', 'Marta Argias'],
           },
         ],
@@ -945,10 +934,8 @@ export const SORTIDES = [
     tipus: 'Processó',
     dia: '2026-09-23',
     data: '23 de setembre',
-    hora: '19:30',
-    horaText: '19.30 h',
-    horaNota:
-      'L’encapçalament del document diu «19 h» i les indicacions, «19.30 h puntuals des del Baluard».',
+    hora: '19:00',
+    horaText: '19 h',
     resum:
       'Processó del dia de la Santa, amb Tram en Calma al carrer Sant Gaudenci i sardana de les tres colles de Gegants davant la Cobla.',
     ordre: [
@@ -978,7 +965,7 @@ export const SORTIDES = [
     protocolPluja:
       'En cas de pluja, previsió de pluja o de qualsevol emergència que pugui afectar el desenvolupament de la processó, es convocarà una reunió entre la Comissió i els Caps de Colla a les 18.15 h a l’Auditori del Miramar per debatre la situació, ja que mitja hora abans de la Processó, la pròpia Comissió, l’Ajuntament i la Parròquia hauran de prendre una decisió conjunta i que serà inapel·lable. El protocol contempla la possibilitat de modificar els horaris i recorreguts en funció de la situació. Si plou un cop iniciada la cercavila, la Comissió prendrà les decisions oportunes i ho comunicarà als caps de colla i als voluntaris dels balls.',
     indicacions: [
-      'HORA: a les 19.30 h puntuals des del Baluard. A les 19.15 h els Gegants, Drac i Àliga hauran d’estar plantats en posició de sortida. Es prega als Geganters si prèviament poden col·locar les tarimes pels músics de la ballada final.',
+      'HORA: a les 19 h puntuals des del Baluard. A les 18.45 h els Gegants, Drac i Àliga hauran d’estar plantats en posició de sortida. Es prega als Geganters si prèviament poden col·locar les tarimes pels músics de la ballada final.',
       'Tots els entremesos i balls han de començar la seva cercavila amb el seu ball i les seves músiques des del Baluard (davant de la porta de la Parròquia). Les colles de foc també hauran d’iniciar la cercavila al Baluard, però no encendran fins davant el canó.',
       'A la pseudo-plaça d’El Cable i al Cap de la Vila s’haurà d’anar sortint ràpidament del lloc de ball perquè la cercavila pugui continuar.',
       'Cal especial atenció als trams entre El Cable i el Cap de la Vila, i entre aquesta plaça i Casa Roy Sitges. No fer talls excessius. La consigna és sempre estar atents al ball del davant i al del darrere i no separar-nos. Es demana aturar-se màxim 2 minuts davant de Casa Roy.',
@@ -1197,10 +1184,16 @@ export const SORTIDES = [
     ordre: ['drac', 'aliga', 'gegants-moros', 'gegants-americanos', 'gegants-vila'],
     ordreNota:
       'Els Gegants entren des del Baluard en aquest ordre: Gegants Moros, Gegants Americanos i Gegants de la Vila.',
+    participantsExtra: [
+      {
+        element: 'banda',
+        nota: 'NOVETAT: obre el camí als Gegants des del Baluard, un cop acabi la ballada del Drac i l’Àliga.',
+      },
+    ],
     indicacions: [
       'Un cop que finalitzi la ballada conjunta del Drac i l’Àliga, aquests, juntament amb els seus timbalers, marxaran pel Mercat Vell. Sempre es farà la sortida amb les bèsties apagades.',
       'Els timbalers han de marxar tocant el toc tradicional dels timbals, darrere de les bèsties, quedant totalment prohibida la parada al mig de la plaça de l’Ajuntament.',
-      'Un cop que han marxat el Drac i l’Àliga, hauran d’entrar amb la màxima brevetat possible els Gegants a la plaça de l’Ajuntament des del Baluard pel següent ordre: Gegants Moros, Gegants Americanos i Gegants de la Vila.',
+      'Un cop que han marxat el Drac i l’Àliga, hauran d’entrar amb la màxima brevetat possible els Gegants a la plaça de l’Ajuntament des del Baluard pel següent ordre: Gegants Moros, Gegants Americanos i Gegants de la Vila. NOVETAT: l’entrada dels Gegants a la plaça des del Baluard serà acompanyada de la Suburband, que obrirà el camí un cop acabi la ballada del Drac i l’Àliga.',
       'Els grallers es posaran sobre les tarimes habilitades davant la porta de l’Ajuntament. És recomanable que els grallers entrin a plaça pel darrere.',
     ],
     puntsAigua: [],
