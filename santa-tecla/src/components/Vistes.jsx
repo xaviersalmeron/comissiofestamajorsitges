@@ -112,7 +112,7 @@ export function VistaGenerals({ onFiltraElement }) {
     <div className="anim-entrada">
       <CapcaleraVista
         titol="Consignes per als integrants del seguici"
-        descripcio="Balls populars, imatgeria festiva, acompanyaments musicals i banda. El document les titula «Cercaviles adultes SB i ST»: són les mateixes per a les dues festes majors."
+        descripcio="Indicacions per a balls populars, imatgeria festiva, acompanyaments musicals i banda que participen a les cercaviles adultes de Sant Bartomeu i Santa Tecla."
       />
 
       <div className="mb-4">
