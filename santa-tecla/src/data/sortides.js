@@ -157,8 +157,10 @@ export const SORTIDES = [
     protocolPluja:
       'En cas de pluja, previsió de pluja o de qualsevol emergència que pugui afectar el desenvolupament de la cercavila i/o la mostra, la Comissió prendrà les decisions oportunes i ho comunicarà als caps de colla i familiars per WhatsApp.',
     indicacions: [],
+    // El document salta del Cap de la Vila a la plaça de l'Ajuntament sense
+    // passar pel carrer Major; la Comissió confirma que hi falta.
     recorregut:
-      'Plaça de l’Ajuntament → Cap de la Vila → Parellades → Sant Pau → Passeig de la Ribera (banda muntanya) → Fragata.',
+      'Plaça de l’Ajuntament → Major → Cap de la Vila → Parellades → Sant Pau → Passeig de la Ribera (banda muntanya) → Fragata.',
     participantsExtra: [
       {
         element: 'castellers',

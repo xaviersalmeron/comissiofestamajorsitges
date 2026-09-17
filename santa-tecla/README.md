@@ -98,8 +98,12 @@ consta ara, indicant-ho a cada bloc.
 
 ## Notes sobre la font
 
-Tot el contingut és una transcripció literal: l'app no esmena el document en cap punt. Queden tres
-llocs on el text no acaba de quadrar amb ell mateix i es mantenen tal com hi consten:
+L'app fa una sola esmena sobre el document, confirmada per la Comissió: al recorregut de la Cercavila
+de Gegants hi afegeix el **carrer Major**, entre la plaça de l'Ajuntament i el Cap de la Vila, que el
+document es deixa.
+
+La resta és transcripció literal. Queden tres llocs on el text no acaba de quadrar amb ell mateix i
+es mantenen tal com hi consten:
 
 - **Processó Cívica.** A la plaça de l'Ajuntament hi diu «12 persones» i s'hi llisten 11 noms més el
   President, on hi consten **Gabri Gónzalez** i **Marta Lluís** (a la resta del document, Gabri
