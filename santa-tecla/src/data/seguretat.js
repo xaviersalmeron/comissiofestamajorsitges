@@ -8,7 +8,7 @@
  * A diferència de la Festa Major de Sant Bartomeu, les consignes de Santa Tecla
  * no porten annex de dispositiu sanitari: aquests quadres són l'única font.
  *
- * Font: Consignes FM Santa Tecla 2026, versió 3.2 (23/09/2026).
+ * Font: Consignes FM Santa Tecla 2026, versió 2.3 (17/09/2026).
  */
 
 /** Els quatre cossos, en l'ordre en què apareixen al document. */
@@ -33,7 +33,7 @@ export const SEGURETAT_PER_ACTE = {
     policia: [],
     seguretat: [],
     creuRoja: [
-      '2 socorristes davant el Ball de Diables, colla ABPS.',
+      '2 socorristes davant el Ball de Diables, colla Vella.',
       'Clínica mòbil davant del Ficus amb 2 socorristes.',
     ],
     bombers: [],

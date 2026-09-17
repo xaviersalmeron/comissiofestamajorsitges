@@ -79,7 +79,7 @@ export function seguretatDeSortida(id) {
 export const META = {
   titol: 'Consignes de la Festa Major',
   sant: 'Santa Tecla 2026',
-  versio: 'Versió 2.2 · 16/09/2026',
+  versio: 'Versió 2.3 · 17/09/2026',
   entitat: 'Comissió Municipal de Sant Bartomeu i Santa Tecla',
 }
 

@@ -1,7 +1,7 @@
 # Consignes · Festa Major de Santa Tecla 2026
 
 Aplicació web de consulta ràpida de les **Consignes de la Festa Major de Santa Tecla de Sitges
-2026** (versió 2.2, 16/09/2026), pensada per als organitzadors i participants de la Festa: membres
+2026** (versió 2.3, 17/09/2026), pensada per als organitzadors i participants de la Festa: membres
 de la Comissió, caps de colla, balladors, músics i voluntariat.
 
 És una app **independent** de la de Sant Bartomeu, amb la mateixa estructura i el mateix objectiu,
@@ -87,36 +87,35 @@ Les **cercaviles del 20 de setembre i les tres Matinals** en queden fora: el doc
 quina colla acompanya cada ball —i l'app ho mostra, bloc per bloc, dins de l'ordre de sortida— però
 no se'n coneixen els components, de manera que no hi surt cap nom.
 
-De cinc colles el document només en dona el nom curt (Guillaumes, Julián, Jan Lleida, Manel Vazquez
-i Oriol Carbonell); l'app les anomena igual, sense inventar-ne la denominació completa.
+De sis colles el document només en dona el nom curt (Guillaumes, Julián, Jan Lleida, Manel Vazquez,
+Oriol Carbonell i Musixs — d'aquesta última, «Musixs (Marc Folch)»); l'app les anomena igual, sense
+inventar-ne la denominació completa.
+
+Dos blocs de bestiari sense foc no tenen cap colla de músics assignada: els sis últims de la
+Cercavila de Gegants i els tres de la Matinal Gran (Giravols, Mini Dracs i Colla les PAAO). A la
+versió anterior, els de la Matinal Gran anaven amb l'Escola de Grallers; l'app ho mostra tal com hi
+consta ara, indicant-ho a cada bloc.
 
 ## Notes sobre la font
 
-Dos noms del document són errors, confirmats per la Comissió, i a l'app surten corregits:
-
-| Al document | A l'app |
-| --- | --- |
-| Mara Juez (Processó Cívica) | **Marta Juez** |
-| Marta Argias (Sortida d'Ofici) | **Marta Artigas** |
-
-És l'única esmena que es fa sobre el text original. La resta de punts on l'encapçalament d'un bloc no
-quadra amb el que hi consta a sota estan transcrits tal com hi són:
+Tot el contingut és una transcripció literal: l'app no esmena el document en cap punt. Queden tres
+llocs on el text no acaba de quadrar amb ell mateix i es mantenen tal com hi consten:
 
 - **Processó Cívica.** A la plaça de l'Ajuntament hi diu «12 persones» i s'hi llisten 11 noms més el
   President, on hi consten **Gabri Gónzalez** i **Marta Lluís** (a la resta del document, Gabri
   González i Maria Lluís).
 - **Sortida d'Ofici.** Hi consta **Aleix Ibañez**, sense accent (a la resta, Aleix Ibáñez).
-- **Processó de Santa Tecla.** Una assignació diu «1 parella fixa» amb tres noms. Els punts
-  accessibles es descriuen com «Passeig de la Ribera (al costat de la Cobla)» a les indicacions i
-  com «Passeig de la Ribera amb carrer Sant Pere» al voluntariat.
-- **Cercavila de Gegants.** Les quatre últimes colles de la llista (el drac de la gorra blava, Colla
-  Espurna, Somnis de FM i Dragonet) no tenen cap colla de músics assignada.
+- **Processó de Santa Tecla.** Els punts accessibles es descriuen com «Passeig de la Ribera (al
+  costat de la Cobla)» a les indicacions i com «Passeig de la Ribera amb carrer Sant Pere» al
+  voluntariat.
 
-La versió de 16/09/2026 va corregir uns quants punts que la revisió anterior havia deixat descosits:
-la Processó Cívica diu ara «1 persona fixa (Raquel Llorià)», el voluntariat de l'esmorzar de les
-Matinals diu «4 voluntaris» —el nombre de noms que hi consten—, el bloc de la Comissió de la Matinal
-Petita s'encapçala a la plaça de l'Ajuntament, que és on comença la cercavila, la Sortida d'Ofici
-diu «3 persones fixes» i la Processó de Santa Tecla fixa l'hora a les 19 h a tot arreu.
+Les revisions del 16 i el 17 de setembre van anar corregint els punts que no lligaven: la Processó
+Cívica diu «1 persona fixa (Raquel Llorià)», el voluntariat de l'esmorzar de les Matinals i la
+Sortida d'Ofici donen el nombre de noms que hi consten, el bloc de la Comissió de la Matinal Petita
+s'encapçala a la plaça de l'Ajuntament —que és on comença la cercavila—, la Processó de Santa Tecla
+fixa l'hora a les 19 h a tot arreu i el seu bloc del Tram en Calma diu «3 persones fixes». La del 17
+va corregir també Mara Juez (ara Marta Juez), Marta Argias (ara Marta Artigas) i Jesús Erole (ara
+Jesús Eroles).
 
 L'Entrada de la Santa no té quadre de seguretat propi. L'app hi mostra el de la Ballada final —la
 mateixa nit i al mateix lloc— i ho diu explícitament.

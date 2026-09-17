@@ -137,6 +137,7 @@ export const ELEMENTS = [
     curt: 'Oriol Carbonell',
     categoria: 'musica',
   },
+  { id: 'colla-musixs', nom: 'Musixs (Marc Folch)', curt: 'Musixs', categoria: 'musica' },
 
   // ── Castells ──
   {

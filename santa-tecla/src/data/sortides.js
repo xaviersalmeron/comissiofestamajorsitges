@@ -37,11 +37,17 @@ const MATINALS_VOLUNTARIAT = {
   nota: 'Voluntariat comú a les tres Matinals de Santa Tecla.',
   grups: [
     {
-      rol: '4 voluntaris per l’esmorzar',
+      rol: '5 voluntaris per l’esmorzar',
       punts: [
         {
           lloc: 'Fragata',
-          persones: ['Jesús Miramon', 'Jep Estrada', 'David Harding', 'Pol Masaguer'],
+          persones: [
+            'Jesús Miramon',
+            'Jep Estrada',
+            'David Harding',
+            'Jonatan Martínez',
+            'Pol Meseguer',
+          ],
         },
       ],
     },
@@ -95,25 +101,27 @@ export const SORTIDES = [
               { element: 'pagesos-can-pei' },
               { element: 'poc-a-poc' },
               { element: 'mil-quatrecents' },
-              { element: 'drac-verdet', nota: 'bestiari sense foc' },
-              { element: 'colla-espurnes', nota: 'bestiari sense foc' },
+              { element: 'jordi-jovenet' },
+              { element: 'colla-pesigolla' },
             ],
           },
           {
             musica: 'gts-marcets',
             colles: [
+              { element: 'drac-verdet', nota: 'bestiari sense foc' },
+              { element: 'colla-espurnes', nota: 'bestiari sense foc' },
               { element: 'giravols', nota: 'bestiari sense foc' },
               { element: 'draguipatis', nota: 'bestiari sense foc' },
               { element: 'ferafocs', nota: 'bestiari sense foc' },
               { element: 'mini-dracs', nota: 'bestiari sense foc' },
-              { element: 'colla-paao', nota: 'bestiari sense foc' },
-              { element: 'escalat-amics', nota: 'bestiari sense foc' },
             ],
           },
           {
             musica: null,
             musicaNota: 'El document no els assigna cap colla de músics.',
             colles: [
+              { element: 'colla-paao', nota: 'bestiari sense foc' },
+              { element: 'escalat-amics', nota: 'bestiari sense foc' },
               { element: 'drac-gorra-blava', nota: 'bestiari sense foc' },
               { element: 'colla-espurna', nota: 'bestiari sense foc' },
               { element: 'somnis-fm', nota: 'bestiari sense foc' },
@@ -126,6 +134,7 @@ export const SORTIDES = [
         titol: 'Balls populars',
         nota: 'Es preparen a la Palmera, segons ordre de sortida.',
         blocs: [
+          { musica: 'gts-marcets', colles: [{ element: 'cabecuts', nom: 'Ball de Cabeçuts' }] },
           { musica: 'gts-marcets', colles: [{ nom: 'Ball de Bastons' }] },
           { musica: 'escola-grallers', colles: [{ nom: 'Ball de Gitanes de la Vila' }] },
           { musica: 'colla-bon-vent', colles: [{ nom: 'Ball de Cercolets' }] },
@@ -251,9 +260,9 @@ export const SORTIDES = [
           {
             musica: null,
             colles: [
-              { element: 'diables-abps' },
               { element: 'diables-vella' },
               { element: 'diables-jove' },
+              { element: 'diables-abps' },
             ],
           },
         ],
@@ -462,7 +471,7 @@ export const SORTIDES = [
             { lloc: 'Ball de Cabeçuts', persones: ['Cristina Gràcia'] },
             {
               lloc: 'Colles de Foc',
-              persones: ['Jordi Salmerón', 'Enric Massó', 'Joan Mas', 'Jesús Erole'],
+              persones: ['Jordi Salmerón', 'Enric Massó', 'Joan Mas', 'Jesús Eroles'],
             },
             {
               lloc: 'Ball de Cintes, Gitanes ABPS, Moixiganga i Banda',
@@ -537,6 +546,8 @@ export const SORTIDES = [
       { lloc: 'Plaça de l’Ajuntament', detall: 'font de la Palmera' },
       { lloc: 'Fragata' },
     ],
+    puntsAiguaNota:
+      'Al Mercat Vell també n’hi haurà per recollir, sota responsabilitat dels caps de colla.',
     comissio: [
       {
         lloc: 'Biblioteca Santiago Rusiñol (inici de la cercavila)',
@@ -590,7 +601,6 @@ export const SORTIDES = [
               { element: 'gegants-montornes' },
               { element: 'gegants-vila-infantils' },
               { element: 'gegants-moros-mitjans' },
-              { element: 'jordi-jovenet' },
             ],
           },
           {
@@ -599,20 +609,29 @@ export const SORTIDES = [
               { element: 'colla-jove-ripoll' },
               { element: 'pagesos-can-pei' },
               { element: 'colla-pesigolla' },
+            ],
+          },
+          {
+            musica: null,
+            musicaNota: 'El document no els assigna cap colla de músics.',
+            colles: [
               { element: 'giravols', nota: 'bestiari sense foc' },
-              { element: 'mini-dracs' },
-              { element: 'colla-paao' },
+              { element: 'mini-dracs', nota: 'bestiari sense foc' },
+              { element: 'colla-paao', nota: 'bestiari sense foc' },
             ],
           },
           { musica: 'escola-grallers', colles: [{ nom: 'Ball de Bastons. Colla 4' }] },
           { musica: 'gts-marcets', colles: [{ nom: 'Ball de Bastons. Colla 5' }] },
-          { musica: 'gts-marcets', colles: [{ nom: 'Ball de Bastons. Colla 6' }] },
+          { musica: 'colla-musixs', colles: [{ nom: 'Ball de Bastons. Colla 6' }] },
           { musica: 'escola-grallers', colles: [{ nom: 'Ball de Gitanes de la Vila. Colla 1' }] },
           { musica: 'colla-jan-lleida', colles: [{ nom: 'Ball de Gitanes de la Vila. Colla 2' }] },
           { musica: 'gts-marcets', colles: [{ nom: 'Ball de Bastons. Colla 7' }] },
           { musica: 'grallers-la-sitja', colles: [{ nom: 'Ball de Bastons. Colla 8' }] },
           { musica: 'colla-julian', colles: [{ nom: 'Ball de Cercolets. Colla 2' }] },
-          { musica: 'colla-filibusters', colles: [{ nom: 'Ball de Pastorets. Colla 2' }] },
+          {
+            musica: 'colla-filibusters',
+            colles: [{ nom: 'Ball de Pastorets. Colla 2' }, { nom: 'Ball de Pastorets. Colla 3' }],
+          },
           { musica: 'colla-joan-olarte', colles: [{ nom: 'Ball de Panderetes' }] },
           { musica: 'escola-grallers', colles: [{ nom: 'Ball de Cintes. Colla 1' }] },
           { musica: 'colla-manel-vazquez', colles: [{ nom: 'Ball de Cintes. Colla 2' }] },
@@ -625,7 +644,7 @@ export const SORTIDES = [
           },
           { musica: 'escola-grallers', colles: [{ nom: 'Ball de la Moixiganga' }] },
         ],
-        avis: 'El document escriu la colla de músics just després del ball que acompanya. Les dues colles de Gitanes ABPS comparteixen una sola marca.',
+        avis: 'El document escriu la colla de músics just després del ball que acompanya. Les dues colles de Gitanes ABPS i les dues de Pastorets comparteixen, cadascuna, una sola marca.',
       },
     ],
     indicacions: [
@@ -639,6 +658,8 @@ export const SORTIDES = [
       { lloc: 'Plaça de l’Ajuntament', detall: 'font de la Palmera' },
       { lloc: 'Fragata' },
     ],
+    puntsAiguaNota:
+      'Al Mercat Vell també n’hi haurà per recollir, sota responsabilitat dels caps de colla.',
     comissio: [
       {
         lloc: 'Baluard amb C/ Fonollar (inici de la cercavila)',
@@ -688,7 +709,7 @@ export const SORTIDES = [
         titol: 'Ordre de les colles',
         blocs: [
           {
-            musica: 'gts-marcets',
+            musica: 'escola-grallers',
             colles: [
               { element: 'gegants-moros-petits', nom: 'Gegants Moros petits de Sitges' },
               { element: 'gegant-rodolf' },
@@ -696,26 +717,31 @@ export const SORTIDES = [
               { element: 'gegant-bs' },
               { element: 'tiet-evaristo' },
               { element: 'cubanitos-mojito', nom: 'Cubanito Moito' },
-              { element: 'cubanita-xalet' },
-              { element: 'poc-a-poc' },
             ],
           },
           {
             musica: 'escola-grallers',
             colles: [
+              { element: 'cubanita-xalet' },
+              { element: 'poc-a-poc' },
               { element: 'mil-quatrecents' },
               { element: 'colla-espurnes' },
               { element: 'draguipatis' },
               { element: 'ferafocs' },
+            ],
+          },
+          {
+            musica: 'gts-marcets',
+            colles: [
               { element: 'drac-verdet' },
               { element: 'escalat-amics' },
               { element: 'drac-gorra-blava' },
               { element: 'colla-espurna' },
               { element: 'somnis-fm' },
               { element: 'dragonet' },
-              { element: 'cabecuts', nom: 'Ball de Cabeçuts' },
             ],
           },
+          { musica: 'gts-marcets', colles: [{ element: 'cabecuts', nom: 'Ball de Cabeçuts' }] },
           { musica: 'grallers-la-sitja', colles: [{ nom: 'Ball de Bastons. Colla 2' }] },
           { musica: 'colla-oriol-carbonell', colles: [{ nom: 'Ball de Bastons. Colla 3' }] },
           { musica: 'colla-bon-vent', colles: [{ nom: 'Ball de Cercolets. Colla 1' }] },
@@ -734,6 +760,8 @@ export const SORTIDES = [
       { lloc: 'Plaça de l’Ajuntament', detall: 'font de la Palmera' },
       { lloc: 'Fragata' },
     ],
+    puntsAiguaNota:
+      'Al Mercat Vell també n’hi haurà per recollir, sota responsabilitat dels caps de colla.',
     comissio: [
       {
         lloc: 'Plaça de l’Ajuntament (inici de la cercavila)',
@@ -895,7 +923,20 @@ export const SORTIDES = [
         ],
       },
     ],
-    voluntariat: { hiHa: false, nota: 'No hi haurà voluntariat en aquest acte.' },
+    voluntariat: {
+      hiHa: true,
+      grups: [
+        {
+          rol: '3 voluntaris repartint aigües',
+          punts: [
+            {
+              lloc: 'Plaça de l’Ajuntament',
+              persones: ['Maria Carreras', 'Josep Maria Fernandez', 'Pol Meseguer'],
+            },
+          ],
+        },
+      ],
+    },
   },
 
   // ─────────────────────────────────────────────────────────────────────────
@@ -1040,7 +1081,7 @@ export const SORTIDES = [
         assignacions: [
           {
             descripcio:
-              '1 parella fixa vetllant pel transcurs de la Processó i el funcionament del Tram en Calma',
+              '3 persones fixes vetllant pel transcurs de la Processó i el funcionament del Tram en Calma',
             persones: ['Mar Jaime', 'Vinyet Casolivé', 'Paula Hidalgo'],
             enAcabar: 'Aniran a la plaça de l’Ajuntament, a vetllar pel transcurs de la Processó.',
           },
@@ -1091,8 +1132,9 @@ export const SORTIDES = [
       nota: 'Un cop arribin els voluntaris a l’Ajuntament, s’encarregaran de fer passadís perquè els balls puguin arribar fins al Baluard.',
       grups: [
         {
-          rol: '4 voluntaris acompanyant el seguici',
+          rol: '5 voluntaris acompanyant el seguici',
           punts: [
+            { lloc: 'Ball de Cabeçuts', persones: ['Maria Carreras'] },
             { lloc: 'Colles de Foc', persones: ['Jordi Salmerón'] },
             { lloc: 'Colles de Bastons i Gitanes Vila', persones: ['Cristina Gràcia'] },
             { lloc: 'Ball de Cercolets, Pastorets i Panderetes', persones: ['Aleix Gràcia'] },
@@ -1105,7 +1147,7 @@ export const SORTIDES = [
             { lloc: 'C/ Jesús amb C/ Francesc Gumà', persones: ['Jep Estrada', 'Jordi Sabaté'] },
             {
               lloc: 'Passeig de la Ribera amb carrer Sant Pere',
-              persones: ['Jonatan', 'Joan Vidal'],
+              persones: ['Jonatan Martínez', 'Joan Vidal'],
             },
           ],
         },

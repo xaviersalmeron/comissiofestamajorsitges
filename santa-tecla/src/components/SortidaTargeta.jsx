@@ -250,7 +250,7 @@ function LlistaPunts({ punts, className = '' }) {
 }
 
 /** 1. Punts d'aigua */
-function BlocAigua({ punts }) {
+function BlocAigua({ punts, nota }) {
   return (
     <BlocSubapartat
       titol="Punts d’aigua"
@@ -275,6 +275,7 @@ function BlocAigua({ punts }) {
           </li>
         ))}
       </ul>
+      {nota && <p className="mt-2.5 text-xs text-slate-500 italic">{nota}</p>}
     </BlocSubapartat>
   )
 }
@@ -724,7 +725,7 @@ export default function SortidaTargeta({ sortida, obert, onToggle, destacats = [
 
           {/* Els quatre subapartats operatius, sempre en el mateix ordre */}
           <div className="grid items-start gap-4 pt-1 lg:grid-cols-2">
-            <BlocAigua punts={sortida.puntsAigua ?? []} />
+            <BlocAigua punts={sortida.puntsAigua ?? []} nota={sortida.puntsAiguaNota} />
             <BlocSeguretat sortidaId={sortida.id} />
             <BlocComissio blocs={sortida.comissio ?? []} />
             <BlocVoluntariat voluntariat={sortida.voluntariat} />
