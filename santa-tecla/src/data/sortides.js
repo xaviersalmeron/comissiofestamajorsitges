@@ -665,8 +665,8 @@ export const SORTIDES = [
         lloc: 'Baluard amb C/ Fonollar (inici de la cercavila)',
         assignacions: [
           {
-            descripcio: '1 persona fixa donant la sortida',
-            persones: ['Maria Lluís'],
+            descripcio: '1 persona fixa donant la sortida i controlant els músics',
+            persones: ['Adrià Ruiz'],
             enAcabar: 'Anirà al Cap de la Vila.',
           },
           {
@@ -675,7 +675,6 @@ export const SORTIDES = [
             enAcabar:
               'En arribar a la Fragata, col·laboren en la preparació i repartiment de l’esmorzar.',
           },
-          { descripcio: '1 persona controlant els músics', persones: ['Adrià Ruiz'] },
         ],
       },
       {
@@ -768,7 +767,7 @@ export const SORTIDES = [
         assignacions: [
           {
             descripcio: '1 persona fixa donant la sortida i controlant els músics',
-            persones: ['Adrià Ruiz'],
+            persones: ['Maria Lluís'],
             enAcabar: 'Anirà al Cap de la Vila.',
           },
           {
