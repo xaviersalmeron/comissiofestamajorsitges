@@ -1,7 +1,7 @@
 # Consignes · Festa Major de Santa Tecla 2026
 
 Aplicació web de consulta ràpida de les **Consignes de la Festa Major de Santa Tecla de Sitges
-2026** (versió 2.3, 17/09/2026), pensada per als organitzadors i participants de la Festa: membres
+2026** (versió 3.0, 17/09/2026), pensada per als organitzadors i participants de la Festa: membres
 de la Comissió, caps de colla, balladors, músics i voluntariat.
 
 És una app **independent** de la de Sant Bartomeu, amb la mateixa estructura i el mateix objectiu,
@@ -109,7 +109,7 @@ llocs on el text no acaba de quadrar amb ell mateix i es mantenen tal com hi con
   costat de la Cobla)» a les indicacions i com «Passeig de la Ribera amb carrer Sant Pere» al
   voluntariat.
 
-Les revisions del 16 i el 17 de setembre van anar corregint els punts que no lligaven: la Processó
+Les revisions del 16 i del 17 de setembre van anar corregint els punts que no lligaven: la Processó
 Cívica diu «1 persona fixa (Raquel Llorià)», el voluntariat de l'esmorzar de les Matinals i la
 Sortida d'Ofici donen el nombre de noms que hi consten, el bloc de la Comissió de la Matinal Petita
 s'encapçala a la plaça de l'Ajuntament —que és on comença la cercavila—, la Processó de Santa Tecla
